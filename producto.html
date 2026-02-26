@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Feliz cumpleaños! - bookinest.com</title>
+<link rel="icon" href="https://bookinest.com/wp-content/uploads/2025/12/cropped-cropped-Bookinest-LOGO-23-scaled-1-80x79.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="https://bookinest.com/wp-content/uploads/2025/12/cropped-cropped-Bookinest-LOGO-23-scaled-1-80x79.png" alt="bookinest.com">
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="libros.html" class="active">NUESTROS LIBROS</a></li>
+        <li><a href="historia.html">NUESTRA HISTORIA</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="search-btn" onclick="toggleSearch()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+      <a href="carrito.html" class="cart-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="product-page">
+  <div class="product-inner">
+    <!-- GALLERY -->
+    <div class="product-gallery">
+      <img id="main-product-img" class="main-product-img"
+        src="https://bookinest.com/wp-content/uploads/2026/02/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-2-scaled.png"
+        alt="¡Feliz cumpleaños!">
+      <div class="thumb-grid">
+        <img class="active" src="https://bookinest.com/wp-content/uploads/2026/02/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-2-600x676.png" alt="">
+        <img src="https://bookinest.com/wp-content/uploads/2026/02/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-3-600x676.png" alt="">
+        <img src="https://bookinest.com/wp-content/uploads/2026/02/feliz-cumpleanos-sofia-2-600x648.png" alt="">
+        <img src="https://bookinest.com/wp-content/uploads/2026/02/feliz-cumpleanos-roman-1-600x648.png" alt="">
+        <img src="https://bookinest.com/wp-content/uploads/2026/02/feliz-cumpleanos-tucan-600x600.png" alt="">
+        <img src="https://bookinest.com/wp-content/uploads/2026/02/Frame-124-600x600.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- INFO -->
+    <div class="product-info">
+      <p class="product-cats">0-3 años, Cómico</p>
+      <h1 class="product-title">¡Feliz cumpleaños!</h1>
+      <p class="product-price">$ 15.000,000 – $ 35.000,000</p>
+
+      <div class="product-desc">
+        <p><strong>¿Qué pasaría si tu peque encontrara un mapa secreto bajo su almohada?</strong></p>
+        <p>En esta historia, se convertirá en protagonista de una misión inolvidable a través del Bosque Encantado para recuperar las cuatro gemas de los sentimientos. Un relato sobre la valentía de sentir, donde cada página refleja su propia esencia y personalidad.</p>
+      </div>
+
+      <!-- Variant selector -->
+      <div class="form-group" style="max-width:320px;margin-bottom:20px;">
+        <label for="product-variant">Formato</label>
+        <select id="product-variant" onchange="updatePrice(this)">
+          <option value="Libro Físico" data-price="35000000">Libro Físico — $ 35.000,000</option>
+          <option value="Ebook" data-price="15000000">Ebook — $ 15.000,000</option>
+        </select>
+      </div>
+
+      <button
+        class="btn-add-cart"
+        id="btn-add-cart"
+        data-id="feliz-cumpleanos"
+        data-name="¡Feliz cumpleaños!"
+        data-price="35000000"
+        data-image="https://bookinest.com/wp-content/uploads/2026/02/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-2-600x676.png">
+        COMPLETAR FORMULARIO
+      </button>
+
+      <p style="font-size:0.85rem;color:#999;margin-top:12px;">
+        🔒 Pago 100% seguro · Envíos a todo el país
+      </p>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="product-tabs" style="padding-top:48px;">
+    <div class="tabs-nav">
+      <button class="tab-btn active" data-tab="tab-desc">Descripción</button>
+      <button class="tab-btn" data-tab="tab-info">Información adicional</button>
+      <button class="tab-btn" data-tab="tab-reviews">Valoraciones (0)</button>
+    </div>
+
+    <div id="tab-desc" class="tab-panel active">
+      <h3>¿Qué descubrirán en este libro?</h3>
+      <p>La fiesta comienza con una invitación muy especial y un camino lleno de confeti. A medida que pasan las páginas, el cumpleañero irá encontrando a sus nuevos amigos:</p>
+      <p>Un desfile personalizado: Según las letras de su nombre, aparecerán diferentes animales y personajes trayendo cada pieza del rompecabezas. ¡Cada libro es una sorpresa distinta!</p>
+      <p>El gran final: Una explosión de alegría donde todas las letras se unen para revelar el nombre completo y la edad del protagonista en una escena final inolvidable.</p>
+      <p><strong>Un libro que crece con el niño</strong>, porque cada cumpleaños puede ser una nueva lectura de esta historia única y personalizada.</p>
+    </div>
+
+    <div id="tab-info" class="tab-panel">
+      <h3>Información adicional</h3>
+      <p><strong>Edad recomendada:</strong> 0-3 años</p>
+      <p><strong>Género:</strong> Cómico, Aventura</p>
+      <p><strong>Formatos disponibles:</strong> Libro Físico (tapa dura, impresión premium) / Ebook (PDF en alta resolución)</p>
+      <p><strong>Tiempo de producción:</strong> 2 semanas para libro físico. Entrega inmediata para Ebook.</p>
+      <p><strong>Envíos:</strong> A toda la Argentina</p>
+    </div>
+
+    <div id="tab-reviews" class="tab-panel">
+      <h3>Valoraciones</h3>
+      <p>Todavía no hay reseñas para este producto.</p>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-cloud"></div>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://bookinest.com/wp-content/uploads/2025/12/Bookinest-LOGO-23-1-1024x1024.png" alt="Bookinest">
+    </div>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="libros.html">Nuestros libros</a></li>
+        <li><a href="historia.html">Nuestra historia</a></li>
+      </ul>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/mybookinest/" target="_blank">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function updatePrice(sel) {
+  const price = parseInt(sel.options[sel.selectedIndex].dataset.price);
+  document.getElementById('btn-add-cart').dataset.price = price;
+}
+</script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio - bookinest.com</title>
+<link rel="icon" href="https://bookinest.com/wp-content/uploads/2025/12/cropped-cropped-Bookinest-LOGO-23-scaled-1-80x79.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="https://bookinest.com/wp-content/uploads/2025/12/cropped-cropped-Bookinest-LOGO-23-scaled-1-80x79.png" alt="bookinest.com">
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">INICIO</a></li>
+        <li><a href="libros.html">NUESTROS LIBROS</a></li>
+        <li><a href="historia.html">NUESTRA HISTORIA</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="search-btn" onclick="toggleSearch()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+      <a href="carrito.html" class="cart-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+  <div class="search-bar" id="search-bar">
+    <input type="text" placeholder="Buscar por:" id="search-input">
+    <button onclick="toggleSearch()">✕</button>
+  </div>
+</header>
+
+<!-- HERO SLIDER -->
+<section class="hero-slider">
+  <div class="slides-wrapper" id="slidesWrapper">
+    <!-- Slide 1 -->
+    <div class="slide slide-1">
+      <div class="slide-clouds slide-clouds-bottom"></div>
+      <div class="slide-content">
+        <div class="slide-image">
+          <img src="https://bookinest.com/wp-content/uploads/2026/02/promo1bis8-794x1024.png" alt="Libro personalizado">
+        </div>
+        <div class="slide-text">
+          <h1>El regalo mas especial: su propia historia</h1>
+          <p>Sorprendé con un libro personalizado <strong>diseñado exclusivamente para ellos</strong></p>
+          <a href="producto.html" class="btn-slider">PERSONALIZAR AHORA</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="slide slide-2">
+      <div class="slide-clouds slide-clouds-bottom orange"></div>
+      <div class="slide-content reverse">
+        <div class="slide-image">
+          <img src="https://bookinest.com/wp-content/uploads/2026/02/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-4-1-1024x962.png" alt="Libros para niños">
+        </div>
+        <div class="slide-text">
+          <h1>Un regalo que crece con ellos</h1>
+          <p>Sorprendé con un libro personalizado <strong>diseñado exclusivamente para ellos</strong></p>
+          <a href="libros.html" class="btn-slider">PERSONALIZAR</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dots -->
+  <div class="slider-dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+  </div>
+</section>
+
+<!-- HOW IT WORKS - 3 CARDS -->
+<section class="how-section">
+  <div class="how-grid">
+    <div class="how-card blue">
+      <img class="how-bg" src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas-fondo15.jpg" alt="">
+      <img class="how-icon" src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas_icono11-1024x620.png" alt="">
+      <h3>Elegí tu historia</h3>
+      <p><strong>Seleccioná</strong> el cuento que más te guste para empezar a crear tu libro.</p>
+    </div>
+    <div class="how-card grey">
+      <img class="how-bg" src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas-fondo22.jpg" alt="">
+      <img class="how-icon" src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas_icono2-1024x1024.png" alt="">
+      <h3>Personalizá</h3>
+      <p><strong>Completá el nombre y descripción.</strong> Nuestras ilustraciones se adaptarán para capturar los rasgos de tu peque.</p>
+    </div>
+    <div class="how-card orange">
+      <img class="how-bg" src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas-fondo31.jpg" alt="">
+      <img class="how-icon" src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas_icono31-1-1024x620.png" alt="">
+      <h3>Recibí tu libro</h3>
+      <p>Nosotros nos encargamos de imprimir tu ejemplar con <strong>calidad premium</strong> y enviarlo a tu dirección.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NUESTROS LIBROS -->
+<section class="books-section">
+  <h2 class="section-h2">Nuestros libros</h2>
+  <div class="books-grid">
+    <a href="producto.html" class="book-card">
+      <div class="book-imgs">
+        <img class="book-img main" src="https://bookinest.com/wp-content/uploads/2026/02/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-2-scaled.png" alt="¡Feliz cumpleaños!">
+        <img class="book-img hover" src="https://bookinest.com/wp-content/uploads/2026/02/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-3-scaled.png" alt="¡Feliz cumpleaños!">
+      </div>
+      <div class="book-meta">
+        <h4>¡Feliz cumpleaños!</h4>
+        <p class="book-cats"><span>0-3 AÑOS</span> <span>CÓMICO</span></p>
+        <p class="book-price">$ 15.000,000 – $ 35.000,000</p>
+      </div>
+    </a>
+    <a href="producto2.html" class="book-card">
+      <div class="book-imgs">
+        <img class="book-img main" src="https://bookinest.com/wp-content/uploads/2025/12/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-scaled.png" alt="El mapa de los sentimientos">
+        <img class="book-img hover" src="https://bookinest.com/wp-content/uploads/2025/12/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-scaled.png" alt="El mapa de los sentimientos">
+      </div>
+      <div class="book-meta">
+        <h4>El mapa de los sentimientos</h4>
+        <p class="book-cats"><span>0-3 AÑOS</span> <span>3-6 AÑOS</span> <span>AVENTURA</span></p>
+        <p class="book-price">$ 15.000,000 – $ 35.000,000</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FEATURES - BLOB CARDS -->
+<section class="features-section">
+  <div class="features-grid">
+    <div class="feat-card feat-blue">
+      <div class="blob-top blue-blob"></div>
+      <div class="feat-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-4-4 1.41-1.41L11 13.17l6.59-6.59L19 8l-8 8z"/></svg>
+      </div>
+      <p><strong>Compra<br>100% segura</strong></p>
+      <p class="feat-desc">Protegemos tus datos y garantizamos un proceso de pago simple y confiable para tu tranquilidad.</p>
+    </div>
+    <div class="feat-card feat-orange">
+      <div class="blob-top orange-blob"></div>
+      <div class="feat-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="white"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+      </div>
+      <p><strong>Envíos a<br>todo el país</strong></p>
+      <p class="feat-desc">Tu libro personalizado viaja seguro hasta tu puerta en cualquier punto del país.</p>
+    </div>
+    <div class="feat-card feat-lightblue">
+      <div class="blob-top lightblue-blob"></div>
+      <div class="feat-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="white"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+      </div>
+      <p><strong>Alta calidad</strong></p>
+      <p class="feat-desc">Libros en tapa dura con impresión premium, diseñados para resistir mil lecturas y durar toda la vida.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <h2 class="section-h2">Preguntas frecuentes</h2>
+  <div class="faq-list">
+    <div class="faq-item open" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>¿Cómo personalizo el personaje si no se usan fotos?</span>
+        <span class="faq-icon">−</span>
+      </div>
+      <div class="faq-a">
+        <p>Es muy simple. Al elegir la historia, podrás seleccionar las características físicas del peque (color de ojos, tipo de cabello, tono de piel, etc.). Nuestra tecnología utiliza estos datos para crear ilustraciones únicas que capturan su esencia de forma fiel y artística.</p>
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>¿Por qué no solicitan fotos de los niños?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Para Bookinest, la privacidad y seguridad de los menores es lo más importante. <strong>Elegimos no solicitar ni almacenar imágenes reales para garantizar una experiencia 100% protegida,</strong> logrando un parecido increíble solo a través de la descripción de sus rasgos.</p>
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>¿En qué formatos están disponibles los cuentos?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Ofrecemos dos opciones: el <strong>Libro Físico,</strong> impreso en papel premium de alta calidad y tapa resistente, y el <strong>Ebook Personalizado,</strong> una versión digital en alta definición que recibís en tu e-mail para leer en cualquier dispositivo.</p>
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>¿Cómo se realizan envíos y que demora tienen?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Realizamos envíos a toda la Argentina (y muy pronto a otros paises). Al ser un producto único creado desde cero, el tiempo de producción e impresión es de <strong>2 semanas,</strong> más el tiempo de envío según tu localidad. La versión <strong>Ebook tiene entrega inmediata una vez procesado.</strong></p>
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>¿Puedo incluir una dedicatoria personal?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>¡Claro que sí! <strong>Todos nuestros libros (físicos y digitales) cuentan con un espacio especial al inicio para que escribas un mensaje lleno de amor.</strong> Es el detalle final que convierte al cuento en un tesoro para toda la vida.</p>
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>¿Como me contacto con Bookinest?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Tenemos distintos medios de contacto: podés escribirnos por Instagram en <strong><a href="https://www.instagram.com/mybookinest/" target="_blank">@mybookinest</a></strong> o por mail a <strong>bookinest@gmail.com</strong>.</p>
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>¿Se pueden realizar cambios o devoluciones?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Al ser un producto personalizado y único, no realizamos cambios ni devoluciones. Por esa razón, nuestro formulario pide el mayor detalle posible para que el resultado sea increíble. <strong>Sin embargo, si el libro presenta algún defecto de fabricación o falla técnica, nos hacemos responsables y realizamos el cambio correspondiente.</strong></p>
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>¿Es seguro pagar en Bookinest?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Sí, contamos con diferentes medios de pago. Tu transacción es totalmente <strong>segura</strong> gracias al respaldo tecnológico de nuestra plataforma y el cifrado de datos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <img class="cta-bg-img" src="https://bookinest.com/wp-content/uploads/2025/12/home-13-scaled.jpg" alt="">
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <h2>¡Convertí a tu peque en el héroe de la historia</h2>
+    <p>Libros personalizados para guardar toda la vida</p>
+    <a href="libros.html" class="btn-cta">Crear mi libro</a>
+  </div>
+</section>
+
+<!-- AGE CATEGORIES -->
+<section class="age-section">
+  <div class="age-grid">
+    <div class="age-card">
+      <img class="age-thumb" src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas-fondo16-150x150.jpg" alt="">
+      <img class="age-book" src="https://bookinest.com/wp-content/uploads/2025/12/promo1bis1-1024x819.png" alt="">
+      <h3>0 a 3 años</h3>
+    </div>
+    <div class="age-card">
+      <img class="age-thumb" src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas-fondo23-150x150.jpg" alt="">
+      <img class="age-book" src="https://bookinest.com/wp-content/uploads/2025/12/promo1bis1-1024x819.png" alt="">
+      <h3>3 a 6 años</h3>
+    </div>
+    <div class="age-card">
+      <img class="age-thumb" src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas-fondo33-150x150.jpg" alt="">
+      <img class="age-book" src="https://bookinest.com/wp-content/uploads/2025/12/promo1bis1-1024x819.png" alt="">
+      <h3>6 a 9 años</h3>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-cloud"></div>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://bookinest.com/wp-content/uploads/2025/12/Bookinest-LOGO-23-1-1024x1024.png" alt="Bookinest">
+    </div>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="libros.html">Nuestros libros</a></li>
+        <li><a href="historia.html">Nuestra historia</a></li>
+      </ul>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/mybookinest/" target="_blank" aria-label="Instagram">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="#" aria-label="Facebook">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="#" aria-label="Twitter/X">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+    <p class="footer-copy">© 2025 Bookinest. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
