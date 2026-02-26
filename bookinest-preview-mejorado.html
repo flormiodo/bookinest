@@ -81,7 +81,7 @@ textarea { height: 80px; resize: vertical; }
 </style>
 </head>
 <body>
-<nav><span>🦉 Bookinest</span></nav>
+<div style="background:#1a56a0;height:4px;width:100%;"></div>
 
 <div class="step active" id="s1">
   <div class="card">
@@ -114,33 +114,7 @@ textarea { height: 80px; resize: vertical; }
 </div>
 
 
-<div class="step" id="s3">
-  <button class="ghost" onclick="go(2)">← Cambiar tapa</button>
-  <div class="pick-title">Elegí el formato</div>
-  <div class="pick-sub">¿Cómo querés recibir el libro?</div>
-  <div class="format-row">
-    <div class="format-card" id="fc-fisico" onclick="selFormat('fisico')">
-      <div class="format-icon">📚</div>
-      <div class="format-name">Libro Físico</div>
-      <div class="format-desc">Tapa dura premium, impresión de alta calidad</div>
-      <div class="format-price" id="price-fisico"></div>
-      <div class="format-price-note">Envío a todo el país</div>
-    </div>
-    <div class="format-card" id="fc-ebook" onclick="selFormat('ebook')">
-      <div class="format-icon">📱</div>
-      <div class="format-name">Ebook</div>
-      <div class="format-desc">PDF en alta definición, calidad premium en pantalla</div>
-      <div class="format-price" id="price-ebook"></div>
-      <div class="format-price-note">Alta calidad en cualquier dispositivo</div>
-    </div>
-    <div class="format-card" id="fc-combo" onclick="selFormat('combo')">
-      <div class="format-icon">📚+📱</div>
-      <div class="format-name">Físico + Ebook</div>
-      <div class="format-desc">Tapa dura premium + PDF en alta definición</div>
-      <div class="format-price" id="price-combo"></div>
-      <div class="format-price-note">¡Lo mejor de ambos formatos!</div>
-    </div>
-  </div>
+
 </div>
 
 <div class="step" id="s4">
