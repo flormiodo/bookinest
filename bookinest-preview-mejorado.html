@@ -422,6 +422,15 @@ function confirmar(){
   document.body.appendChild(form);
   form.submit();
 }
+
+// Auto-select Libro Fisico (format step removed)
+window.selFmt = 'fisico';
+window.selFmtLabel = 'Libro Físico';
+window.selFmtPrice = 35000000;
+function formatPrice(fmt) {
+  var prices = { fisico: 35000000, ebook: 15000000, combo: 45000000 };
+  return prices[fmt] || 35000000;
+}
 </script>
 </body>
 </html>
