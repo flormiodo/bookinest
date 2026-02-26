@@ -256,8 +256,17 @@ function goCovers(){
 function selCover(k){ cover=k; (function(){if(typeof selFmtPrice==='undefined'){selFmtPrice=35000;selFmtLabel='Libro Físico';curFmt='fisico';}go(4);})(); initFormatPrices(); }
 
 function initFormatPrices(){
-  // Hardcoded to Libro Fisico for now
-  window.selFmt = 'fisico';
+  // Auto-select Libro Físico using fake DOM so closure vars get set correctly
+  var fakeS3 = document.createElement('div');
+  fakeS3.id = 's3'; fakeS3.className = 'step';
+  ['fisico','ebook','combo'].forEach(function(k){
+    var c = document.createElement('div');
+    c.id = 'fc-' + k; c.className = 'format-card';
+    fakeS3.appendChild(c);
+  });
+  document.body.appendChild(fakeS3);
+  try { selFormat('fisico'); } catch(e) {}
+  fakeS3.remove();
 }
 
 function selFormat(f){
