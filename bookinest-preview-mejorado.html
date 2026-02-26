@@ -256,12 +256,8 @@ function goCovers(){
 function selCover(k){ cover=k; (function(){if(typeof selFmtPrice==='undefined'){selFmtPrice=35000;selFmtLabel='Libro Físico';curFmt='fisico';}go(4);})(); initFormatPrices(); }
 
 function initFormatPrices(){
-  document.getElementById('price-fisico').textContent = formatPrice(PRECIOS.fisico);
-  document.getElementById('price-ebook').textContent = formatPrice(PRECIOS.ebook);
-  document.getElementById('price-combo').textContent = formatPrice(PRECIOS.combo);
-  // Reset selection
-  document.querySelectorAll('.format-card').forEach(c => c.classList.remove('sel'));
-  formato = '';
+  // Hardcoded to Libro Fisico for now
+  window.selFmt = 'fisico';
 }
 
 function selFormat(f){
