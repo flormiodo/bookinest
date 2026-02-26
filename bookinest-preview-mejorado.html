@@ -120,7 +120,7 @@ textarea { height: 80px; resize: vertical; }
 <div class="step" id="s4">
   <div class="book-wrap">
     <div class="book-header">
-      <button class="ghost" onclick="go(3)">← Cambiar formato</button>
+      <button class="ghost" onclick="go(2)">← Cambiar tapa</button>
       <span class="pg-count" id="pgcount"></span>
     </div>
     <div class="price-bar" id="price-bar" style="display:none">📖 <span id="bar-format"></span> — <strong id="bar-price"></strong></div>
@@ -256,7 +256,7 @@ function goCovers(){
   go(2);
 }
 
-function selCover(k){ cover=k; go(3); initFormatPrices(); }
+function selCover(k){ cover=k; go(4); initFormatPrices(); }
 
 function initFormatPrices(){
   document.getElementById('price-fisico').textContent = formatPrice(PRECIOS.fisico);
