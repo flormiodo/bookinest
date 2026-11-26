@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bookinest | Libros infantiles personalizados</title>
+<meta name="description" content="Libros infantiles personalizados para peques de 0 a 6 años, donde tu peque es protagonista. Tapa dura premium y envíos a todo el país.">
+<meta property="og:title" content="Bookinest | Su nombre. Su carita. Su propia historia.">
+<meta property="og:description" content="Libros personalizados para peques de 0 a 6 años. Donde cada peque tiene su propia historia.">
+<meta property="og:image" content="https://bookinest.com/wp-content/uploads/2026/02/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-2-scaled.png">
+<meta name="theme-color" content="#FFF8EE">
+<link rel="icon" href="https://bookinest.com/wp-content/uploads/2025/12/cropped-cropped-Bookinest-LOGO-23-scaled-1-80x79.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- En producción: reemplazar Fredoka por Kidzhood (fuente de marca) autoalojada -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFF8EE;
+  --paper-2:#FBEEDC;
+  --ink:#1F2A44;
+  --ink-2:#55607A;
+  --blue:#2761B3;
+  --sky:#CFE6F7;
+  --booki:#8EC3E8;
+  --orange:#E87722;
+  --sun:#FFC54D;
+  --pink:#F6C1CB;
+  --rose:#CF8A94;
+  --mint:#BDE7D3;
+  --lilac:#D9CFF5;
+  --white:#fff;
+  --r:26px;
+  --b:2.5px solid var(--ink);
+  --hs:5px 5px 0 var(--ink);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:'Roboto',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Fredoka','Roboto',sans-serif;line-height:1.02;font-weight:600;letter-spacing:-.015em}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+.hand{font-family:'Caveat',cursive;font-weight:700;letter-spacing:0}
+.section{padding:110px 0}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.95rem;padding:6px 14px;border:var(--b);border-radius:999px;background:#fff;margin-bottom:18px}
+.kicker i{width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.h2{font-size:clamp(2.3rem,5.4vw,4rem)}
+.sub{color:var(--ink-2);font-size:1.12rem;margin-top:16px;max-width:560px}
+.head-center{text-align:center;margin:0 auto 60px;max-width:760px}
+.head-center .sub{margin-left:auto;margin-right:auto}
+.mark{position:relative;white-space:nowrap;z-index:0}
+.mark svg{position:absolute;left:-4%;bottom:-.16em;width:108%;height:.42em;z-index:-1}
+.pill{background:var(--sun);border:var(--b);border-radius:999px;padding:0 .25em;display:inline-block;transform:rotate(-2deg);line-height:1.15}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.12rem;border:var(--b);border-radius:999px;padding:15px 28px;cursor:pointer;transition:transform .12s ease,box-shadow .12s ease;white-space:nowrap;box-shadow:4px 4px 0 var(--ink);background:#fff;color:var(--ink)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-blue{background:var(--blue);color:#fff}
+.btn .arr{display:inline-block;transition:transform .2s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* Header */
+.header{position:sticky;top:12px;z-index:50;padding:0 12px}
+.header-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:var(--b);border-radius:999px;padding:8px 8px 8px 16px;box-shadow:var(--hs)}
+.logo{display:flex;align-items:center;gap:8px;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.5rem;color:var(--blue)}
+.logo img{width:40px;height:40px}
+.nav{display:flex;gap:6px;font-family:'Fredoka',sans-serif;font-weight:500}
+.nav a{padding:8px 14px;border-radius:999px;transition:background .15s}
+.nav a:hover{background:var(--sky)}
+.header .btn{padding:10px 20px;font-size:1rem;box-shadow:3px 3px 0 var(--ink)}
+
+/* Announcement */
+.announce{text-align:center;font-size:.9rem;padding:10px 16px 0;color:var(--ink-2)}
+.announce b{color:var(--ink)}
+
+/* Hero */
+.hero{position:relative;padding:56px 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(3rem,7.4vw,6rem);font-weight:700}
+.hero h1 .l2{color:var(--blue)}
+.hero h1 .l3{color:var(--orange)}
+.hero .sub{font-size:1.2rem}
+.namer{margin-top:30px;background:#fff;border:var(--b);border-radius:var(--r);box-shadow:var(--hs);padding:18px;max-width:560px;position:relative}
+.namer label{display:flex;justify-content:space-between;align-items:baseline;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.08rem;margin:0 4px 10px}
+.namer label .hand{font-size:1.25rem;color:var(--orange);transform:rotate(-3deg)}
+.namer-row{display:flex;gap:10px}
+.namer input{flex:1;min-width:0;font:500 1.15rem 'Fredoka',sans-serif;padding:14px 20px;border-radius:999px;border:var(--b);background:var(--paper);color:var(--ink);outline:none;transition:background .15s,box-shadow .15s}
+.namer input:focus{background:#fff;box-shadow:0 0 0 4px var(--sky)}
+.namer input::placeholder{color:#9AA3B5}
+.trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.trust span{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:500;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.7);border:1.5px solid rgba(31,42,68,.15)}
+
+/* Stage */
+.stage{position:relative;display:grid;place-items:center;min-height:520px}
+.stage-bg{position:absolute;width:92%;aspect-ratio:1;border-radius:46% 54% 52% 48% / 52% 44% 56% 48%;background:var(--sky);border:var(--b);animation:morph 12s ease-in-out infinite}
+@keyframes morph{50%{border-radius:56% 44% 42% 58% / 44% 56% 44% 56%}}
+.cover{position:relative;width:min(86%,420px);container-type:inline-size;transform:rotate(-4deg);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.cover:hover{transform:rotate(0) scale(1.03)}
+.cover img{width:100%;height:auto;filter:drop-shadow(10px 14px 0 rgba(31,42,68,.18))}
+.cover-patch{position:absolute;left:15.5%;width:69%;top:28.6%;height:13.4%;background:#EFE7D5;border-radius:12px;filter:blur(2px)}
+.cover-name{position:absolute;left:15%;width:70%;top:28.6%;height:13.4%;display:flex;align-items:center;justify-content:center;font-family:'Fredoka',sans-serif;font-weight:600;color:var(--rose);text-transform:uppercase;line-height:1;letter-spacing:.02em;font-size:15cqw;white-space:nowrap}
+.cover-name.pop{animation:pop .35s ease}
+@keyframes pop{40%{transform:scale(1.08)}}
+.sticker{position:absolute;width:132px;height:132px;right:2%;top:4%;z-index:3}
+.sticker .ring{width:100%;height:100%;animation:spin 16s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sticker .core{position:absolute;inset:26%;border-radius:50%;background:var(--sun);border:var(--b);display:grid;place-items:center;font-size:1.6rem}
+.booki-float{position:absolute;left:0;bottom:6%;width:120px;z-index:3;animation:float 4.5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-14px) rotate(4deg)}}
+.note{position:absolute;right:0;bottom:10%;z-index:3;background:#fff;border:var(--b);border-radius:16px;box-shadow:4px 4px 0 var(--ink);padding:10px 14px;transform:rotate(4deg);font-family:'Fredoka',sans-serif;font-weight:500;font-size:.95rem;display:flex;gap:8px;align-items:center}
+.note i{width:10px;height:10px;border-radius:50%;background:#2FB36B;box-shadow:0 0 0 4px rgba(47,179,107,.22);animation:pulse 1.6s ease infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(47,179,107,0)}}
+.doodle{position:absolute;pointer-events:none;color:var(--ink)}
+
+/* Marquee */
+.marquee{background:var(--blue);color:#fff;border-top:var(--b);border-bottom:var(--b);transform:rotate(-1.5deg);margin:10px -20px 0;overflow:hidden}
+.marquee-track{display:flex;width:max-content;animation:scroll 28s linear infinite}
+.marquee span{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.5rem;padding:16px 0;white-space:nowrap}
+.marquee span b{color:var(--sun);margin:0 22px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* Bento */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(200px,auto);gap:18px}
+.tile{border:var(--b);border-radius:var(--r);box-shadow:var(--hs);padding:28px;background:#fff;position:relative;overflow:hidden}
+.tile h3{font-size:1.7rem;margin-bottom:8px}
+.tile p{color:var(--ink-2)}
+.t-main{grid-column:span 2;grid-row:span 2;background:var(--sky);display:flex;flex-direction:column}
+.t-main h3{font-size:clamp(2rem,3.4vw,2.8rem)}
+.t-main .vs{display:grid;gap:10px;margin:18px 0}
+.vs-row{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;background:#fff;border:var(--b);font-family:'Fredoka',sans-serif;font-weight:500;font-size:1.05rem}
+.vs-row.no{background:transparent;border-style:dashed;color:var(--ink-2)}
+.vs-row.no s{text-decoration-thickness:2px}
+.vs-row .ic{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.9rem;border:2px solid var(--ink)}
+.vs-row.no .ic{background:#fff}
+.vs-row.yes .ic{background:var(--sun)}
+@keyframes blink{50%{opacity:0}}
+.t-photo{grid-row:span 2;padding:0}
+.t-photo img{width:100%;height:100%;object-fit:cover}
+.t-photo .tag{position:absolute;left:14px;bottom:14px;right:14px;background:#fff;border:var(--b);border-radius:14px;padding:8px 12px;font-family:'Fredoka',sans-serif;font-weight:500;font-size:.95rem}
+.t-ded{background:var(--pink)}
+.t-ded .hand{font-size:1.7rem;line-height:1.15;display:block;margin-top:6px;transform:rotate(-2deg)}
+.t-hard{background:var(--mint)}
+.big-num{font-family:'Fredoka',sans-serif;font-weight:700;font-size:3.6rem;line-height:1}
+.t-ship{background:var(--sun);grid-column:span 2;display:flex;gap:20px;align-items:center}
+.t-ship .truck{flex:none;width:90px;height:90px;border-radius:50%;background:#fff;border:var(--b);display:grid;place-items:center;font-size:2.6rem}
+.t-pay{background:var(--lilac);grid-column:span 2;display:flex;gap:20px;align-items:center}
+.t-pay .truck{flex:none;width:90px;height:90px;border-radius:50%;background:#fff;border:var(--b);display:grid;place-items:center;font-size:2.6rem}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative}
+.steps::before{content:"";position:absolute;top:58px;left:12%;right:12%;border-top:3px dashed var(--ink);opacity:.25;z-index:0}
+.step{position:relative;z-index:1;text-align:center;padding:0 10px}
+.step-n{width:116px;height:116px;margin:0 auto 22px;border-radius:50%;border:var(--b);box-shadow:var(--hs);display:grid;place-items:center;font-family:'Fredoka',sans-serif;font-weight:700;font-size:3.2rem;background:#fff;transition:transform .3s}
+.step:hover .step-n{transform:rotate(-8deg) scale(1.05)}
+.step:nth-child(1) .step-n{background:var(--sky)}
+.step:nth-child(2) .step-n{background:var(--pink)}
+.step:nth-child(3) .step-n{background:var(--mint)}
+.step h3{font-size:1.75rem;margin-bottom:8px}
+.step p{color:var(--ink-2);max-width:300px;margin:0 auto}
+.step .time{display:inline-block;margin-top:14px;font-family:'Caveat',cursive;font-weight:700;font-size:1.35rem;color:var(--orange)}
+.center-cta{text-align:center;margin-top:56px}
+
+/* Books */
+.books{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.book{border:var(--b);border-radius:var(--r);box-shadow:var(--hs);background:#fff;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
+.book:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+.book-art{aspect-ratio:1/.92;display:grid;place-items:center;position:relative;border-bottom:var(--b);overflow:hidden}
+.book-art img{width:78%;height:88%;object-fit:contain;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.book:hover .book-art img{transform:scale(1.06) rotate(-2deg)}
+.book:nth-child(1) .book-art{background:var(--pink)}
+.book:nth-child(2) .book-art{background:var(--mint)}
+.book:nth-child(3) .book-art{background:var(--sun)}
+.badge{position:absolute;top:14px;left:14px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.85rem;padding:5px 12px;border-radius:999px;border:2px solid var(--ink);background:#fff}
+.book-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.ages{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.ages span{font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--paper);border:1.5px solid rgba(31,42,68,.2)}
+.book h3{font-size:1.65rem;margin-bottom:8px}
+.book p{color:var(--ink-2);font-size:.98rem;flex:1}
+.book-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px}
+.price small{display:block;color:var(--ink-2);font-size:.8rem;line-height:1}
+.price b{font-family:'Fredoka',sans-serif;font-size:1.7rem;font-weight:600}
+.book .btn{padding:12px 20px;font-size:1rem}
+.soon-art{width:70%;aspect-ratio:1;background:#fff;border:var(--b);border-radius:24px;box-shadow:var(--hs);display:grid;place-items:center;transform:rotate(-4deg);position:relative}
+.soon-art .q{position:absolute;font-family:'Caveat',cursive;font-weight:700;font-size:1.6rem;right:-18px;top:-22px;background:var(--orange);color:#fff;border:var(--b);border-radius:999px;padding:0 12px;transform:rotate(8deg)}
+.waitlist{display:flex;gap:8px;margin-top:18px}
+.waitlist input{flex:1;min-width:0;font:400 1rem 'Roboto',sans-serif;padding:12px 16px;border-radius:999px;border:var(--b);outline:none;background:var(--paper)}
+.waitlist input:focus{background:#fff;box-shadow:0 0 0 4px var(--sky)}
+.ok{display:none;margin-top:18px;padding:12px 16px;border-radius:14px;background:var(--mint);border:var(--b);font-weight:500}
+
+/* Carousel */
+.carousel-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px}
+.car-btns{display:flex;gap:10px}
+.car-btns button{width:54px;height:54px;border-radius:50%;border:var(--b);box-shadow:3px 3px 0 var(--ink);background:#fff;font-size:1.3rem;cursor:pointer;transition:transform .12s}
+.car-btns button:hover{transform:translate(-2px,-2px)}
+.carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px 20px 16px;margin:0 -20px;scroll-padding:0 20px}
+.carousel::-webkit-scrollbar{display:none}
+.slide{flex:0 0 clamp(260px,32vw,380px);scroll-snap-align:start;border:var(--b);border-radius:var(--r);box-shadow:var(--hs);overflow:hidden;background:#fff;position:relative;aspect-ratio:4/5}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide figcaption{position:absolute;left:12px;bottom:12px;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-family:'Fredoka',sans-serif;font-weight:500;font-size:.92rem}
+
+/* Occasions */
+.occ-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}
+.occ-list{display:flex;flex-wrap:wrap;gap:12px;align-content:flex-start;margin-top:28px}
+.occ{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;background:#fff;border:var(--b);font-family:'Fredoka',sans-serif;font-weight:500;font-size:1.1rem;transition:transform .15s,background .15s;cursor:default}
+.occ:hover{transform:rotate(-3deg) scale(1.04);background:var(--sun)}
+.xmas{background:#1F5A3A;color:#fff;border:var(--b);border-radius:var(--r);box-shadow:var(--hs);padding:32px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:22px}
+.xmas::before{content:"❄ ✦ ❄ ✦ ❄";position:absolute;right:-10px;top:10px;font-size:2rem;opacity:.15;letter-spacing:8px}
+.xmas h3{font-size:2rem}
+.xmas p{opacity:.9}
+.count{display:flex;gap:10px}
+.count div{flex:1;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.35);border-radius:16px;padding:10px;text-align:center}
+.count b{display:block;font-family:'Fredoka',sans-serif;font-size:2.2rem;line-height:1}
+.count small{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.xmas .btn{align-self:flex-start;background:var(--sun);color:var(--ink)}
+
+/* Formats */
+.formats{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:900px;margin:0 auto}
+.format{border:var(--b);border-radius:var(--r);padding:34px;background:#fff;box-shadow:var(--hs);position:relative}
+.format.hot{background:var(--sky)}
+.format .ribbon{position:absolute;top:-18px;right:24px;background:var(--orange);color:#fff;border:var(--b);border-radius:999px;padding:4px 16px;font-family:'Caveat',cursive;font-weight:700;font-size:1.35rem;transform:rotate(4deg)}
+.format h3{font-size:1.9rem}
+.fprice{font-family:'Fredoka',sans-serif;font-size:3rem;font-weight:700;margin:6px 0 0;line-height:1.1}
+.fsub{color:var(--ink-2);margin-bottom:22px}
+.format ul{list-style:none;display:grid;gap:12px;margin-bottom:28px}
+.format li{display:flex;gap:10px;align-items:flex-start}
+.format li::before{content:"✓";flex:none;width:24px;height:24px;border-radius:50%;background:var(--sun);border:2px solid var(--ink);display:grid;place-items:center;font-weight:700;font-size:.8rem;margin-top:1px}
+.format .btn{width:100%}
+.assure{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:34px}
+.assure span{font-size:.92rem;font-weight:500;padding:8px 14px;border-radius:999px;background:#fff;border:1.5px solid rgba(31,42,68,.2)}
+
+/* Reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review{border:var(--b);border-radius:var(--r);box-shadow:var(--hs);padding:28px;background:#fff}
+.review:nth-child(2){transform:rotate(1.2deg);background:var(--paper-2)}
+.review:nth-child(3){transform:rotate(-1deg)}
+.stars{color:var(--orange);font-size:1.15rem;letter-spacing:3px}
+.review blockquote{font-family:'Fredoka',sans-serif;font-weight:500;font-size:1.22rem;line-height:1.35;margin:14px 0 20px}
+.who{display:flex;align-items:center;gap:12px;font-size:.92rem}
+.av{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-family:'Fredoka',sans-serif;font-weight:600}
+.who b{display:block}
+.who small{color:var(--ink-2)}
+
+/* UGC */
+.ugc{border:var(--b);border-radius:var(--r);box-shadow:var(--hs);background:var(--pink);padding:44px;display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+.ugc .sub{margin-top:10px}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.faq-side{position:sticky;top:110px}
+.faq-side .help{margin-top:28px;border:var(--b);border-radius:var(--r);box-shadow:var(--hs);background:var(--pink);padding:22px;display:flex;gap:16px;align-items:center}
+.faq-side .help img{width:70px;flex:none}
+.faq-side .help b{font-family:'Fredoka',sans-serif;font-size:1.15rem;display:block}
+.faq-side .help a{text-decoration:underline;text-underline-offset:3px;font-weight:500}
+.faq{display:grid;gap:12px}
+.faq details{background:#fff;border:var(--b);border-radius:20px;padding:0 22px;transition:box-shadow .15s}
+.faq details[open]{box-shadow:var(--hs)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 0;font-family:'Fredoka',sans-serif;font-weight:500;font-size:1.15rem;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);background:var(--sun);display:grid;place-items:center;font-size:1.3rem;line-height:1;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 22px;color:var(--ink-2)}
+.faq details a{color:var(--blue);font-weight:500;text-decoration:underline}
+
+/* Final */
+.final-card{background:var(--blue);color:#fff;border:var(--b);border-radius:40px;box-shadow:8px 8px 0 var(--ink);padding:70px 40px;text-align:center;position:relative;overflow:hidden}
+.final-card h2{font-size:clamp(2.4rem,5.6vw,4.4rem);max-width:820px;margin:0 auto;font-weight:700}
+.final-card h2 .pill{color:var(--ink)}
+.final-card p{font-size:1.18rem;opacity:.92;margin:18px auto 34px;max-width:520px}
+.final-card .booki{width:140px;margin:0 auto 14px;animation:float 4.5s ease-in-out infinite}
+.final-card .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 2px,transparent 2px);background-size:26px 26px;pointer-events:none}
+
+/* Footer */
+.footer{padding:80px 0 0;overflow:hidden}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;font-size:.97rem}
+.footer h4{font-size:1.15rem;margin-bottom:12px}
+.footer ul{list-style:none;display:grid;gap:8px;color:var(--ink-2)}
+.footer a:hover{color:var(--blue)}
+.footer p{color:var(--ink-2);max-width:320px}
+.wordmark{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(4rem,19vw,17rem);line-height:.8;letter-spacing:-.04em;color:var(--blue);text-align:center;margin-top:60px;user-select:none;white-space:nowrap}
+.wordmark span{color:var(--orange)}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:2px solid rgba(31,42,68,.12);padding:20px 0 100px;margin-top:14px;font-size:.86rem;color:var(--ink-2)}
+
+/* Sticky mobile CTA */
+.sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;transform:translateY(150%);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.sticky-cta.show{transform:none}
+.sticky-cta .btn{width:100%;padding:16px}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.review.reveal.in:nth-child(2){transform:rotate(1.2deg)}
+.review.reveal.in:nth-child(3){transform:rotate(-1deg)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* Responsive */
+@media (max-width:1000px){
+  .nav{display:none}
+  .hero-grid,.occ-wrap,.faq-grid{grid-template-columns:1fr}
+  .stage{min-height:auto;padding:20px 0;max-width:440px;margin:0 auto;width:100%}
+  .bento{grid-template-columns:1fr 1fr}
+  .t-main{grid-column:span 2;grid-row:auto}
+  .t-photo{grid-row:span 2}
+  .t-ship,.t-pay{grid-column:span 2}
+  .steps,.books,.reviews{grid-template-columns:1fr}
+  .steps{gap:44px}
+  .steps::before{display:none}
+  .books{max-width:480px;margin:0 auto}
+  .formats{grid-template-columns:1fr;gap:34px}
+  .faq-side{position:static}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid>div:first-child{grid-column:span 2}
+  .sticky-cta{display:block}
+  .review:nth-child(n){transform:none!important}
+}
+@media (max-width:600px){
+  .section{padding:80px 0}
+  .header .btn{padding:8px 14px;font-size:.92rem}
+  .hide-sm{display:none}
+  .header-in{padding:6px 6px 6px 12px}
+  .hero{padding-top:28px}
+  .namer-row{flex-direction:column}
+  .namer .btn{width:100%}
+  .sticker{width:96px;height:96px}
+  .booki-float{width:84px}
+  .bento{grid-template-columns:1fr}
+  .t-main,.t-ship,.t-pay{grid-column:auto}
+  .t-photo{grid-row:auto;aspect-ratio:4/5}
+  .t-ship,.t-pay{flex-direction:column;align-items:flex-start}
+  .carousel-head{flex-direction:column;align-items:flex-start}
+  .car-btns{display:none}
+  .final-card{padding:56px 22px;border-radius:30px}
+  .mark{white-space:normal}
+  .doodle{display:none}
+}
+</style>
+</head>
+<body>
+
+<p class="announce">🎄 <b>Navidad:</b> pedí el libro físico antes del <b>5/12</b> · el Ebook tiene entrega inmediata</p>
+
+<header class="header">
+  <div class="header-in">
+    <a href="#top" class="logo" aria-label="Bookinest, inicio">
+      <img src="https://bookinest.com/wp-content/uploads/2025/12/cropped-cropped-Bookinest-LOGO-23-scaled-1-80x79.png" alt="">bookinest
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#por-que">Por qué</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#libros">Libros</a>
+      <a href="#precios">Precios</a>
+      <a href="#faq">Ayuda</a>
+    </nav>
+    <a href="#libros" class="btn btn-primary">Creá su libro<span class="hide-sm"> ahora</span> <span class="arr">→</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <!-- doodles -->
+  <svg class="doodle" style="left:3%;top:12%;width:34px" viewBox="0 0 24 24" fill="#FFC54D" stroke="#1F2A44" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.7-5 4.5 1.4 6.6L12 16.8 6.1 20l1.4-6.6-5-4.5 6.6-.7z"/></svg>
+  <svg class="doodle" style="right:44%;top:6%;width:26px" viewBox="0 0 24 24" fill="#F6C1CB" stroke="#1F2A44" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>
+  <svg class="doodle" style="left:40%;top:3%;width:60px" viewBox="0 0 60 20" fill="none" stroke="#2761B3" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M2 10c6-8 12-8 18 0s12 8 18 0 12-8 18 0"/></svg>
+
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker"><i></i>Libros personalizados · 0 a 6 años</span>
+      <h1>Su nombre.<br><span class="l2">Su carita.</span><br><span class="l3">Su historia.</span></h1>
+      <p class="sub">Un libro ilustrado donde tu peque es protagonista y se reconoce en cada página. Un regalo para leer juntos y guardar toda la vida.</p>
+
+      <form class="namer" id="namerForm" autocomplete="off">
+        <label for="kidName">¿Cómo se llama tu peque? <span class="hand">¡probá! ↘</span></label>
+        <div class="namer-row">
+          <input id="kidName" name="nombre" type="text" maxlength="14" placeholder="Escribí su nombre…">
+          <button class="btn btn-primary" type="submit">Creá su libro ahora <span class="arr">→</span></button>
+        </div>
+      </form>
+
+      <div class="trust">
+        <span>💌 Dedicatoria incluida</span>
+        <span>📖 Tapa dura premium</span>
+        <span>🚚 Envíos a todo el país</span>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-bg"></div>
+      <div class="cover" id="cover">
+        <img src="https://bookinest.com/wp-content/uploads/2026/02/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-2-600x676.png" alt="Tapa del libro ¡Feliz cumpleaños! con el nombre de tu peque" width="600" height="676">
+        <div class="cover-patch" aria-hidden="true"></div>
+        <div class="cover-name" id="coverName" aria-live="polite">OLIVIA</div>
+      </div>
+
+      <div class="sticker" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 132 132">
+          <defs><path id="circ" d="M66,66 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs>
+          <circle cx="66" cy="66" r="64" fill="#fff" stroke="#1F2A44" stroke-width="2.5"/>
+          <text font-family="Fredoka, sans-serif" font-weight="600" font-size="14.5" letter-spacing="2.2" fill="#1F2A44"><textPath href="#circ">UN LIBRO ÚNICO ✦ HECHO A SU MEDIDA ✦</textPath></text>
+        </svg>
+        <div class="core">📖</div>
+      </div>
+      <img class="booki-float" src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas_icono2-1024x1024.png" alt="Booki, la mascota de Bookinest" width="120" height="120">
+      <div class="note"><i></i>Vista previa en vivo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Libros personalizados<b>✦</b>Tapa dura premium<b>✦</b>Dedicatoria incluida<b>✦</b>Envíos con Pick It<b>✦</b>Pagá con Mercado Pago<b>✦</b>Ebook con entrega inmediata<b>✦</b></span>
+    <span>Libros personalizados<b>✦</b>Tapa dura premium<b>✦</b>Dedicatoria incluida<b>✦</b>Envíos con Pick It<b>✦</b>Pagá con Mercado Pago<b>✦</b>Ebook con entrega inmediata<b>✦</b></span>
+  </div>
+</div>
+
+<!-- ================= POR QUÉ (BENTO) ================= -->
+<section class="section" id="por-que">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="kicker"><i></i>Por qué Bookinest</span>
+      <h2 class="h2">Hecho a su medida.<br><span class="mark">Único como tu peque.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14C70 4 160 2 297 10" stroke="#FFC54D" stroke-width="12" fill="none" stroke-linecap="round"/></svg></span></h2>
+    </div>
+
+    <div class="bento">
+      <div class="tile t-main reveal">
+        <h3>No es un libro con su nombre. Es <em style="font-style:normal;color:var(--blue)">su</em> libro.</h3>
+        <p>Según el cuento, lo personalizamos a partir de una foto o de una descripción de sus rasgos. Las ilustraciones se adaptan para que sea el héroe de la historia.</p>
+        <div class="vs">
+          <div class="vs-row yes"><span class="ic">✓</span>Su nombre</div>
+          <div class="vs-row yes"><span class="ic">✓</span>Ilustraciones adaptadas a su look</div>
+          <div class="vs-row yes"><span class="ic">✓</span>Tu dedicatoria en la primera página</div>
+        </div>
+        <a href="#como" class="btn" style="margin-top:auto;align-self:flex-start">Ver cómo funciona <span class="arr">→</span></a>
+      </div>
+
+      <div class="tile t-photo reveal">
+        <img src="https://bookinest.com/wp-content/uploads/2026/02/feliz-cumpleanos-sofia-2-600x648.png" alt="Bebé sosteniendo su libro Feliz cumpleaños, Sofía" loading="lazy">
+        <div class="tag">📖 “Feliz cumpleaños, Sofía”</div>
+      </div>
+
+      <div class="tile t-ded reveal">
+        <h3>Con dedicatoria</h3>
+        <p>La primera página es tuya. Por ejemplo:</p>
+        <span class="hand">“Para Juli, que llenó la casa de risas. Te amamos ♥”</span>
+      </div>
+
+      <div class="tile t-hard reveal">
+        <div class="big-num">∞</div>
+        <h3>lecturas</h3>
+        <p>Tapa dura con impresión premium, para resistir mil “¡otra vez!”.</p>
+      </div>
+
+      <div class="tile t-ship reveal">
+        <div class="truck" aria-hidden="true">🚚</div>
+        <div><h3>A todo el país</h3><p>Enviamos con Pick It a toda la Argentina.</p></div>
+      </div>
+
+      <div class="tile t-pay reveal">
+        <div class="truck" aria-hidden="true">💳</div>
+        <div><h3>Pago seguro</h3><p>Pagás con Mercado Pago, simple y confiable.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CÓMO FUNCIONA ================= -->
+<section class="section" id="como" style="background:var(--paper-2);border-top:var(--b);border-bottom:var(--b)">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="kicker"><i></i>Cómo funciona</span>
+      <h2 class="h2">Tres pasos <span class="pill">y listo</span></h2>
+      <p class="sub">Vos ponés el amor. Nosotros, las ilustraciones, la imprenta y el envío.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-n">1</div><h3>Elegí la historia</h3><p>Cumpleaños, emociones… el cuento ideal para su edad y su momento.</p></div>
+      <div class="step reveal"><div class="step-n">2</div><h3>Contanos cómo es</h3><p>Completá el formulario con sus datos y tu dedicatoria. Según el cuento, te pedimos una foto o una descripción.</p></div>
+      <div class="step reveal"><div class="step-n">3</div><h3>Recibilo en casa</h3><p>Lo imprimimos en tapa dura y lo enviamos a todo el país.</p><span class="time">~2 semanas + envío</span></div>
+    </div>
+    <div class="center-cta reveal"><a href="#libros" class="btn btn-primary">Creá su libro ahora <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ================= LIBROS ================= -->
+<section class="section" id="libros">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="kicker"><i></i>Nuestros libros</span>
+      <h2 class="h2">Elegí su historia</h2>
+      <p class="sub">Cada libro se crea desde cero para tu peque. No hay dos iguales.</p>
+    </div>
+    <div class="books">
+      <article class="book reveal">
+        <div class="book-art"><span class="badge">🎂 Cumpleaños</span>
+          <img src="https://bookinest.com/wp-content/uploads/2026/02/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-2-600x676.png" alt="Libro ¡Feliz cumpleaños! personalizado" loading="lazy"></div>
+        <div class="book-body">
+          <div class="ages"><span>0–3 años</span><span>Cómico</span></div>
+          <h3>¡Feliz cumpleaños!</h3>
+          <p>La fiesta comienza con una invitación muy especial y un camino lleno de confeti… ¡y tu peque es protagonista!</p>
+          <div class="book-foot"><div class="price"><small>desde</small><b>$15.000</b></div><a href="producto.html" class="btn btn-primary js-carry">Crear <span class="arr">→</span></a></div>
+        </div>
+      </article>
+      <article class="book reveal">
+        <div class="book-art"><span class="badge">💛 Emociones</span>
+          <img src="https://bookinest.com/wp-content/uploads/2025/12/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-scaled.png" alt="Libro El mapa de los sentimientos personalizado" loading="lazy"></div>
+        <div class="book-body">
+          <div class="ages"><span>0–3 años</span><span>3–6 años</span><span>Aventura</span></div>
+          <h3>El mapa de los sentimientos</h3>
+          <p>¿Qué pasaría si tu peque encontrara un mapa secreto bajo su almohada? Una misión por el Bosque Encantado para recuperar las cuatro gemas de los sentimientos.</p>
+          <div class="book-foot"><div class="price"><small>desde</small><b>$15.000</b></div><a href="producto2.html" class="btn btn-primary js-carry">Crear <span class="arr">→</span></a></div>
+        </div>
+      </article>
+      <article class="book reveal">
+        <div class="book-art"><span class="badge">🔜 Próximamente</span>
+          <div class="soon-art" aria-hidden="true"><span class="q">¿dónde?</span>
+            <svg width="55%" viewBox="0 0 120 120" fill="none"><circle cx="50" cy="50" r="30" stroke="#1F2A44" stroke-width="10" fill="#CFE6F7"/><path d="M72 72l30 30" stroke="#1F2A44" stroke-width="13" stroke-linecap="round"/><circle cx="42" cy="44" r="7" fill="#E87722"/><circle cx="58" cy="56" r="4" fill="#2761B3"/></svg>
+          </div></div>
+        <div class="book-body">
+          <div class="ages"><span>Buscá y encontrá</span></div>
+          <h3>Buscá y encontrá <small style="font-size:.55em;color:var(--ink-2);font-weight:500">(nombre provisorio)</small></h3>
+          <p>7 escenarios ilustrados llenos de detalles para buscar y encontrar. Sumate y te avisamos cuando salga.</p>
+          <form class="waitlist" id="waitlist"><input type="email" required placeholder="Tu email" aria-label="Tu email"><button class="btn btn-blue" type="submit" style="padding:10px 18px;font-size:1rem">Avisame</button></form>
+          <div class="ok" id="waitOk">¡Listo! Vas a ser de las primeras personas en enterarte 💛</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CARRUSEL ================= -->
+<section class="section" style="padding-top:20px">
+  <div class="wrap">
+    <div class="carousel-head reveal">
+      <div><span class="kicker"><i></i>Por dentro</span><h2 class="h2">Para leer mil veces</h2></div>
+      <div class="car-btns"><button type="button" data-dir="-1" aria-label="Anterior">←</button><button type="button" data-dir="1" aria-label="Siguiente">→</button></div>
+    </div>
+    <div class="carousel" id="carousel">
+      <figure class="slide"><img src="https://bookinest.com/wp-content/uploads/2026/02/promo1bis8-794x1024.png" alt="Nena pensando junto a Booki"><figcaption>Booki acompaña cada historia</figcaption></figure>
+      <figure class="slide"><img src="https://bookinest.com/wp-content/uploads/2026/02/Frame-124-600x600.jpg" alt="Páginas interiores con animales de la granja"><figcaption>Páginas interiores</figcaption></figure>
+      <figure class="slide"><img src="https://bookinest.com/wp-content/uploads/2026/02/feliz-cumpleanos-roman-1-600x648.png" alt="Libro Feliz cumpleaños, Román"><figcaption>“Feliz cumpleaños, Román”</figcaption></figure>
+      <figure class="slide"><img src="https://bookinest.com/wp-content/uploads/2026/02/feliz-cumpleanos-tucan-600x600.png" alt="Ilustración del tucán del libro"><figcaption>Personajes únicos</figcaption></figure>
+      <figure class="slide"><img src="https://bookinest.com/wp-content/uploads/2025/12/LIBROS-NUBES-BOOKINEST_Mesa-de-trabajo-1-copia-scaled.png" alt="Interior de El mapa de los sentimientos"><figcaption>El mapa de los sentimientos</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OCASIONES + NAVIDAD ================= -->
+<section class="section" style="padding-top:20px">
+  <div class="wrap occ-wrap">
+    <div class="reveal">
+      <span class="kicker"><i></i>El regalo perfecto</span>
+      <h2 class="h2">Los juguetes pasan.<br><span style="color:var(--blue)">Su libro se queda.</span></h2>
+      <div class="occ-list">
+        <span class="occ">🎂 Cumpleaños</span>
+        <span class="occ">🎄 Navidad</span>
+        <span class="occ">👶 Llega un hermanito</span>
+        <span class="occ">🎈 Día de las Infancias</span>
+        <span class="occ">🎒 Primer día de jardín</span>
+        <span class="occ">💛 Porque sí</span>
+      </div>
+    </div>
+    <!-- Cambiar la fecha límite en data-deadline según la temporada -->
+    <div class="xmas reveal" id="xmas" data-deadline="2026-12-05T23:59:00-03:00">
+      <div><h3>🎁 Llegá a Navidad</h3><p>Pedidos de libro físico hasta el 5/12. Después, el Ebook tiene entrega inmediata.</p></div>
+      <div class="count" aria-label="Tiempo restante">
+        <div><b id="cd-d">0</b><small>días</small></div>
+        <div><b id="cd-h">0</b><small>horas</small></div>
+        <div><b id="cd-m">0</b><small>min</small></div>
+      </div>
+      <a href="#libros" class="btn">Quiero llegar <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRECIOS ================= -->
+<section class="section" id="precios" style="background:var(--paper-2);border-top:var(--b);border-bottom:var(--b)">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="kicker"><i></i>Formatos y precios</span>
+      <h2 class="h2">Elegí cómo lo querés</h2>
+    </div>
+    <div class="formats">
+      <div class="format reveal">
+        <h3>Ebook</h3>
+        <div class="fprice">$15.000</div>
+        <div class="fsub">Digital, en alta definición</div>
+        <ul><li>Personalizado para tu peque</li><li>Dedicatoria incluida</li><li>Te llega por email</li><li>Para leer en celu, tablet o compu</li></ul>
+        <a href="#libros" class="btn">Elegir Ebook</a>
+      </div>
+      <div class="format hot reveal">
+        <span class="ribbon">para regalar ♥</span>
+        <h3>Libro físico</h3>
+        <div class="fprice">$35.000</div>
+        <div class="fsub">Tapa dura · impresión premium</div>
+        <ul><li>Todo lo del Ebook, en papel</li><li>Tapa dura con impresión premium</li><li>Envío a todo el país con Pick It</li><li>Producción en ~2 semanas</li></ul>
+        <a href="#libros" class="btn btn-primary">Creá su libro ahora <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="assure">
+      <span>🔒 Pago seguro con Mercado Pago</span>
+      <span>📦 Envíos a todo el país</span>
+      <span>🛠 Si llega con una falla de impresión, lo reponemos</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESEÑAS ================= -->
+<!-- Cuando haya reseñas reales (con permiso), reemplazar este bloque por testimonios -->
+<section class="section" style="padding-top:20px">
+  <div class="wrap">
+    <div class="ugc reveal">
+      <div>
+        <span class="kicker"><i></i>Familias Bookinest</span>
+        <h2 class="h2">¿Ya llegó su libro?</h2>
+        <p class="sub">Mostranos su cara al leerlo. Etiquetanos en Instagram y sumate a la comunidad.</p>
+      </div>
+      <a href="https://www.instagram.com/mybookinest/" target="_blank" rel="noopener" class="btn btn-blue">Seguinos en @mybookinest <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section" id="faq" style="padding-top:20px">
+  <div class="wrap faq-grid">
+    <div class="faq-side reveal">
+      <span class="kicker"><i></i>Ayuda</span>
+      <h2 class="h2">Preguntas frecuentes</h2>
+      <div class="help">
+        <img src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas_icono2-1024x1024.png" alt="" loading="lazy">
+        <div><b>¿Te quedó alguna duda?</b>Escribinos a <a href="https://www.instagram.com/mybookinest/" target="_blank" rel="noopener">@mybookinest</a> o a <a href="mailto:bookinest@gmail.com">bookinest@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>¿Cómo se personaliza?</summary><p>Depende del cuento: según la historia, te pedimos una foto o una descripción de sus rasgos (color de ojos, tipo de pelo, tono de piel…). Con eso adaptamos las ilustraciones para que tu peque se reconozca en cada página.</p></details>
+      <details><summary>¿Qué formatos hay?</summary><p><b>Libro físico</b> en tapa dura con impresión premium, o <b>Ebook</b> en alta definición que te llega por email para leer en cualquier dispositivo.</p></details>
+      <details><summary>¿Cuánto tarda en llegar?</summary><p>Cada libro se crea desde cero: la producción e impresión lleva unas <b>2 semanas</b>, más el envío según tu localidad. Enviamos a toda la Argentina con Pick It. El Ebook se entrega una vez procesado el pedido.</p></details>
+      <details><summary>¿Puedo sumar una dedicatoria?</summary><p>¡Sí! Todos los libros, físicos y digitales, tienen un espacio al inicio para tu mensaje.</p></details>
+      <details><summary>¿Hay cambios o devoluciones?</summary><p>Al ser un producto personalizado no hacemos cambios ni devoluciones, por eso el formulario pide el mayor detalle posible. Si llega con un defecto de fabricación, nos hacemos cargo y lo reponemos.</p></details>
+      <details><summary>¿Es seguro pagar?</summary><p>Sí. Los pagos se procesan con Mercado Pago, con todos sus medios de pago y cifrado de datos.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section class="section" style="padding-top:20px">
+  <div class="wrap">
+    <div class="final-card reveal">
+      <div class="dots"></div>
+      <img class="booki" src="https://bookinest.com/wp-content/uploads/2025/12/caracteristicas_icono2-1024x1024.png" alt="" loading="lazy">
+      <h2>Que se vea en su propia <span class="pill">historia</span></h2>
+      <p>Un libro único, con su nombre y su carita, para leer juntos y guardar para siempre.</p>
+      <a href="#top" class="btn btn-primary js-to-namer">Creá su libro ahora <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><div class="logo" style="margin-bottom:10px"><img src="https://bookinest.com/wp-content/uploads/2025/12/cropped-cropped-Bookinest-LOGO-23-scaled-1-80x79.png" alt="">bookinest</div><p>Libros infantiles personalizados, hechos con amor. Donde cada peque tiene su propia historia.</p></div>
+      <div><h4>Explorá</h4><ul><li><a href="#libros">Nuestros libros</a></li><li><a href="#como">Cómo funciona</a></li><li><a href="historia.html">Nuestra historia</a></li><li><a href="#faq">Preguntas frecuentes</a></li></ul></div>
+      <div><h4>Hablemos</h4><ul><li><a href="https://www.instagram.com/mybookinest/" target="_blank" rel="noopener">Instagram @mybookinest</a></li><li><a href="mailto:bookinest@gmail.com">bookinest@gmail.com</a></li></ul></div>
+    </div>
+    <div class="wordmark" aria-hidden="true">bookinest<span>.</span></div>
+    <div class="legal"><span>© <span id="year">2026</span> Bookinest. Todos los derechos reservados.</span><span>Envíos con Pick It · Pagos con Mercado Pago</span></div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta"><a href="#libros" class="btn btn-primary">Creá su libro ahora <span class="arr">→</span></a></div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- Nombre en la tapa, en vivo ----
+  var input = document.getElementById('kidName'), nameEl = document.getElementById('coverName');
+  function fit(){
+    var box = nameEl.parentElement.clientWidth * 0.68, size = 15;
+    nameEl.style.fontSize = size + 'cqw';
+    while (nameEl.scrollWidth > box && size > 6){ size -= 0.5; nameEl.style.fontSize = size + 'cqw'; }
+  }
+  function render(animate){
+    var v = (input.value || '').trim();
+    nameEl.textContent = v ? v.toLocaleUpperCase('es-AR') : 'OLIVIA';
+    fit();
+    if (animate && !reduce){ nameEl.classList.remove('pop'); void nameEl.offsetWidth; nameEl.classList.add('pop'); }
+    try { sessionStorage.setItem('bk_nombre', v); } catch(e){}
+  }
+  input.addEventListener('input', function(){ render(true); });
+  window.addEventListener('resize', fit);
+  try { var s = sessionStorage.getItem('bk_nombre'); if (s) input.value = s; } catch(e){}
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function(){ render(false); });
+
+  document.getElementById('namerForm').addEventListener('submit', function(e){
+    e.preventDefault(); document.getElementById('libros').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  });
+  // Lleva el nombre al producto (?nombre=) para precargar el formulario
+  document.querySelectorAll('.js-carry').forEach(function(a){
+    a.addEventListener('click', function(){
+      var v = (input.value || '').trim();
+      if (v){ var u = new URL(a.getAttribute('href'), location.href); u.searchParams.set('nombre', v); a.href = u.toString(); }
+    });
+  });
+  document.querySelectorAll('.js-to-namer').forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'}); setTimeout(function(){ input.focus({preventScroll:true}); }, 600); });
+  });
+
+  // ---- Waitlist (conectar a Klaviyo / Mailchimp / WooCommerce) ----
+  document.getElementById('waitlist').addEventListener('submit', function(e){
+    e.preventDefault(); this.style.display = 'none'; document.getElementById('waitOk').style.display = 'block';
+  });
+
+  // ---- Carrusel ----
+  var car = document.getElementById('carousel');
+  document.querySelectorAll('.car-btns button').forEach(function(b){
+    b.addEventListener('click', function(){ car.scrollBy({left: +b.dataset.dir * (car.firstElementChild.offsetWidth + 20), behavior:'smooth'}); });
+  });
+
+  // ---- Cuenta regresiva Navidad ----
+  var xmas = document.getElementById('xmas'), deadline = new Date(xmas.dataset.deadline).getTime();
+  function cd(){
+    var d = deadline - Date.now();
+    if (d <= 0){ xmas.querySelector('h3').textContent = '🎁 ¿Llegás justo? Regalá el Ebook'; xmas.querySelector('p').textContent = 'Te llega por email, listo para regalar en Navidad.'; xmas.querySelector('.count').style.display = 'none'; return; }
+    document.getElementById('cd-d').textContent = Math.floor(d / 864e5);
+    document.getElementById('cd-h').textContent = Math.floor(d % 864e5 / 36e5);
+    document.getElementById('cd-m').textContent = Math.floor(d % 36e5 / 6e4);
+  }
+  cd(); setInterval(cd, 30000);
+
+  // ---- CTA fijo en mobile ----
+  var sticky = document.getElementById('stickyCta'), hero = document.querySelector('.hero'), fin = document.querySelector('.final-card');
+  function onScroll(){
+    var past = window.scrollY > hero.offsetHeight;
+    var atEnd = fin.getBoundingClientRect().top < window.innerHeight;
+    sticky.classList.toggle('show', past && !atEnd);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // ---- Aparición al scrollear ----
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
