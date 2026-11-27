@@ -19,10 +19,11 @@
   --ink:#1D2B44; --ink-2:#4A5873; --line:#E3E8F0;
   --r:28px; --shadow:0 16px 44px rgba(29,43,68,.10); --shadow-lg:0 28px 70px rgba(29,43,68,.18);
   --tip:#FFF6C9; --tip-b:#E9C94A;
+  --wa:#168A45; --wa-h:#0F7339; --wa-d:#0C5C2E;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
-body{font-family:'Roboto',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{font-family:'Roboto',system-ui,sans-serif;font-size:17px;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button,input{font:inherit;color:inherit}
@@ -38,13 +39,15 @@ h1,h2,h3,h4{font-family:'Fredoka','Roboto',sans-serif;line-height:1.05;font-weig
 .head.center{text-align:center}.head.center .lead{margin-left:auto;margin-right:auto}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.08rem;border-radius:999px;padding:15px 28px;cursor:pointer;border:2px solid transparent;transition:transform .15s,box-shadow .15s,background .15s,color .15s;white-space:nowrap;background:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.1rem;border-radius:999px;padding:15px 28px;min-height:56px;cursor:pointer;border:2px solid transparent;transition:transform .15s,box-shadow .15s,background .15s,color .15s;white-space:nowrap;background:transparent}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:translateY(1px)}
 .btn-primary{background:var(--orange);color:#fff;box-shadow:0 5px 0 var(--orange-d),0 14px 26px rgba(232,119,34,.26)}
 .btn-ghost{color:var(--blue);border-color:var(--blue)}
 .btn-ghost:hover{background:var(--blue);color:#fff}
-.btn-wa{background:#25D366;color:#fff;box-shadow:0 5px 0 #1DA851}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 5px 0 var(--wa-d)}
+.btn-wa:hover{background:var(--wa-h)}
+.btn-wa .ic{fill:currentColor;stroke:none;width:22px;height:22px}
 .btn .ic{width:20px;height:20px;transition:transform .2s}
 .btn:hover .ic.arr{transform:translateX(4px)}
 
@@ -255,9 +258,36 @@ body.clean .tip{display:none}
 .legal-row{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:20px;font-size:.85rem}
 
 /* Floating */
-.wa{position:fixed;right:18px;bottom:18px;z-index:70;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.2);transition:transform .15s}
-.wa:hover{transform:scale(1.06)}
-.wa .ic{width:28px;height:28px}
+.fab{position:fixed;right:18px;bottom:18px;z-index:70;display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;border:0;border-radius:999px;padding:10px 22px 10px 10px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.1rem;cursor:pointer;box-shadow:0 12px 28px rgba(12,92,46,.35);min-height:62px;transition:transform .15s,background .15s}
+.fab:hover{background:var(--wa-h);transform:translateY(-2px)}
+.fab .bub{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center}
+.fab .ic{fill:currentColor;stroke:none;width:26px;height:26px}
+.wa-sheet{position:fixed;right:18px;bottom:92px;z-index:95;width:min(400px,calc(100% - 24px));background:#fff;border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.25);padding:22px;transform:translateY(16px) scale(.98);opacity:0;pointer-events:none;transition:all .25s cubic-bezier(.2,.8,.2,1)}
+.wa-sheet.open{transform:none;opacity:1;pointer-events:auto}
+.wa-sheet .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.wa-sheet h3{font-size:1.45rem}
+.wa-sheet .x{border:none;background:var(--soft);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem;flex:none}
+.wa-sheet .hint{color:var(--ink-2);font-size:.95rem;margin:6px 0 14px}
+.wa-q{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;border:2px solid var(--line);font-weight:500;font-size:1.02rem;transition:border-color .15s,background .15s;margin-bottom:8px;min-height:56px}
+.wa-q:hover{border-color:var(--wa);background:#F1FAF4}
+.wa-q .ic{fill:var(--wa);stroke:none;width:22px;height:22px}
+.wa-sheet .alt{margin-top:12px;font-size:.95rem;color:var(--ink-2);text-align:center}
+.wa-sheet .alt a{color:var(--blue);font-weight:700;white-space:nowrap}
+.hwa{display:inline-flex;align-items:center;gap:8px;color:var(--wa);font-family:'Fredoka',sans-serif;font-weight:600;padding:8px 12px;border-radius:999px;min-height:44px}
+.hwa:hover{background:#F1FAF4}
+.hwa .ic{fill:currentColor;stroke:none;width:22px;height:22px}
+.header-actions{display:flex;align-items:center;gap:6px}
+.or{display:flex;align-items:center;gap:12px;color:var(--ink-2);font-size:.92rem}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.wa-line{display:flex;align-items:center;gap:12px;margin-top:16px;padding:14px 18px;border-radius:18px;background:#F1FAF4;color:#0C5C2E;font-weight:500;border:1.5px solid #CDEBD8;transition:background .15s}
+.wa-line:hover{background:#E3F5EA}
+.wa-line .ic{fill:var(--wa);stroke:none;width:28px;height:28px}
+.helpband{margin-top:44px;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;background:#F1FAF4;border:1.5px solid #CDEBD8;border-radius:28px;padding:26px 30px}
+.helpband .bub{width:64px;height:64px;border-radius:50%;background:var(--wa);display:grid;place-items:center}
+.helpband .bub .ic{fill:#fff;stroke:none;width:34px;height:34px}
+.helpband h3{font-size:1.5rem}
+.helpband p{color:var(--ink-2);margin-top:4px}
+.hero .sublink{display:inline-block;margin-top:14px;color:var(--blue);font-weight:500;text-decoration:underline;text-underline-offset:3px}
 .toast{position:fixed;left:50%;top:20px;transform:translate(-50%,-20px);opacity:0;z-index:100;background:var(--ink);color:#fff;border-radius:999px;padding:10px 18px;font-weight:500;transition:all .3s;pointer-events:none}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .inspo-bar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:80;display:flex;align-items:center;gap:4px;background:var(--ink);color:#fff;border-radius:999px;padding:6px;box-shadow:0 14px 34px rgba(0,0,0,.25);font-family:'Fredoka',sans-serif;font-weight:500;font-size:.95rem}
@@ -305,6 +335,7 @@ body.clean .sw::after{left:3px}
   .tl-i p{margin:0}
   .final-card .txt{padding:40px 28px 10px}
   .final-card .books{min-height:300px}
+  .helpband{grid-template-columns:1fr;text-align:left}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:600px){
@@ -323,8 +354,16 @@ body.clean .sw::after{left:3px}
   .rv{width:280px}
   .final-card .ctas .btn{width:100%}
   .footer-grid{grid-template-columns:1fr}
-  .inspo-bar{left:12px;right:84px;transform:none;justify-content:space-between}
+  .inspo-bar{left:12px;transform:none;padding:4px}
   .inspo-bar .lbl{display:none}
+  .inspo-bar button{padding:9px 10px}
+  .fab{right:12px;bottom:12px;padding:8px 16px 8px 8px;font-size:1rem}
+  .wa-sheet{right:12px;bottom:84px}
+  .hwa span{display:none}
+  .hwa{width:46px;height:46px;padding:0;justify-content:center;background:#E3F5EA;margin-left:6px}
+  .logo{font-size:1.3rem}
+  .helpband .btn{width:100%}
+  .inspo-bar{bottom:86px}
   .promo .sep{display:none}
 }
 </style>
@@ -348,7 +387,7 @@ body.clean .sw::after{left:3px}
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A9 9 0 1112 21a9 9 0 01-4.4-1.1z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.6-1.9-.9-.8.8a3.6 3.6 0 01-2.1-2.1l.8-.8-.9-1.9z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
 </svg>
 
@@ -368,7 +407,10 @@ body.clean .sw::after{left:3px}
     <nav class="nav" aria-label="Principal">
       <a href="#probalo">Probalo</a><a href="#cuentos">Cuentos</a><a href="#personalizar">Cómo se personaliza</a><a href="#entrega">Entrega</a><a href="#faq">Ayuda</a>
     </nav>
-    <a href="#cuentos" class="btn btn-primary">Elegí su cuento<span class="hide-sm"> ahora</span> <svg class="ic arr"><use href="#i-arr"/></svg></a>
+    <div class="header-actions">
+      <a class="hwa" data-wa="¡Hola Bookinest! Tengo una consulta." target="_blank" rel="noopener" href="https://wa.me/5491131820326" aria-label="WhatsApp"><svg class="ic"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+      <a href="#cuentos" class="btn btn-primary">Elegí su cuento<span class="hide-sm"> ahora</span> <svg class="ic arr"><use href="#i-arr"/></svg></a>
+    </div>
   </div>
 </header>
 
@@ -383,7 +425,7 @@ body.clean .sw::after{left:3px}
       <p class="lead">Verse en un libro fortalece su autoestima y crea una conexión única con la lectura. Para su cumple, su llegada al mundo, Navidad o para leer antes de dormir.</p>
       <div class="hero-ctas">
         <a href="#probalo" class="btn btn-primary">Probalo con su nombre <svg class="ic arr"><use href="#i-arr"/></svg></a>
-        <a href="#cuentos" class="btn btn-ghost">Ver los 8 cuentos</a>
+        <a class="btn btn-wa" data-wa="¡Hola Bookinest! Quiero regalar un cuento personalizado y necesito ayuda para elegir." target="_blank" rel="noopener" href="https://wa.me/5491131820326"><svg class="ic"><use href="#i-wa"/></svg>Pedir por WhatsApp</a>
       </div>
       <div class="stack">
         <div class="stack-imgs">
@@ -394,6 +436,7 @@ body.clean .sw::after{left:3px}
         </div>
         <span><b>8 cuentos</b> para cada momento</span>
       </div>
+      <aside class="tip"><span class="k">i</span><div><b>Dos caminos desde el principio: web o WhatsApp</b>Quien se maneja bien compra por la web. Quien prefiere hablar con una persona (¡las abuelas!) tiene WhatsApp al lado, en el header, en el botón flotante y junto a cada compra, siempre con el mensaje ya escrito.</div></aside>
       <aside class="tip"><span class="k">i</span><div><b>Los nombres que rotan salen de tus tapas</b>Olivia, Mateo, Tobías, Alan… En 2 segundos se entiende qué vendés, sin leer nada más. Ideal para quien llega desde un anuncio.</div></aside>
     </div>
     <div class="hero-art">
@@ -437,6 +480,8 @@ body.clean .sw::after{left:3px}
           <div class="eta"><svg class="ic"><use href="#i-clock"/></svg><span id="eta">—</span></div>
           <a href="https://bookinest.com/product/feliz-cumpleanos/" class="btn btn-primary" id="go">Personalizar su cuento <svg class="ic arr"><use href="#i-arr"/></svg></a>
           <p class="note">Tapa blanda o dura y eBook se eligen en el siguiente paso.</p>
+          <div class="or">o si preferís</div>
+          <a class="btn btn-wa" id="goWa" target="_blank" rel="noopener" href="https://wa.me/5491131820326"><svg class="ic"><use href="#i-wa"/></svg>Pedirlo por WhatsApp</a>
         </div>
       </div>
     </div>
@@ -496,6 +541,11 @@ body.clean .sw::after{left:3px}
       </a>
     </div>
     <aside class="tip warn reveal"><span class="k">!</span><div><b>Ojo con el precio que se muestra</b>En la ficha de ¡Feliz cumpleaños! la tapa dura ($92.000) figura como "Más elegido", pero en el listado aparece $55.000 (la blanda). Si el listado muestra la opción más barata, aclará "desde $55.000" para que nadie se sorprenda en la ficha.</div></aside>
+    <div class="helpband reveal">
+      <div class="bub"><svg class="ic"><use href="#i-wa"/></svg></div>
+      <div><h3>¿Preferís hacer el pedido hablando con una persona?</h3><p>Escribinos por WhatsApp y lo armamos juntos: nos pasás el nombre y lo que necesitemos, y nos ocupamos del resto.</p></div>
+      <a class="btn btn-wa" data-wa="¡Hola Bookinest! Prefiero hacer el pedido por acá. ¿Me ayudan?" target="_blank" rel="noopener" href="https://wa.me/5491131820326"><svg class="ic"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -529,6 +579,7 @@ body.clean .sw::after{left:3px}
           <p>La historia se arma alrededor de su nombre. En ¡Feliz cumpleaños!, por ejemplo, cada letra la trae un personaje distinto: no hay dos libros iguales.</p>
           <span class="pill"><svg class="ic"><use href="#i-brush"/></svg>Todos suman una dedicatoria tuya al inicio.</span>
         </div>
+        <a class="wa-line" data-wa="¡Hola! Estoy personalizando un cuento y tengo una duda." target="_blank" rel="noopener" href="https://wa.me/5491131820326"><svg class="ic"><use href="#i-wa"/></svg><span>¿Te trabás con la foto o con algún paso? Tocá acá y lo terminamos juntos por WhatsApp.</span></a>
         <aside class="tip"><span class="k">i</span><div><b>Un ícono por forma en cada tapa del catálogo</b>Si cada card mostrara "con foto", "avatar" o "nombre", nadie tendría que entrar a la ficha para saber qué le van a pedir.</div></aside>
       </div>
     </div>
@@ -568,6 +619,7 @@ body.clean .sw::after{left:3px}
       <span><svg class="ic"><use href="#i-card"/></svg>Mercado Pago</span>
       <span><svg class="ic"><use href="#i-pin"/></svg>Retiro en Belgrano</span>
     </div>
+    <div style="max-width:560px;margin:0 auto" class="reveal"><a class="wa-line" data-wa="¡Hola! Necesito el cuento para una fecha especial. ¿Llega a tiempo si lo pido hoy?" target="_blank" rel="noopener" href="https://wa.me/5491131820326"><svg class="ic"><use href="#i-wa"/></svg><span>¿Lo necesitás para una fecha especial? Preguntanos por WhatsApp si llega a tiempo.</span></a></div>
     <div class="head center" style="margin:0"><aside class="tip"><span class="k">i</span><div><b>Mostrá la fecha también en la ficha y el checkout</b>"Si pedís hoy, sale entre el X y el Y" baja la ansiedad, sobre todo en fechas como Navidad. Ojo: este cálculo no descuenta feriados.</div></aside></div>
   </div>
 </section>
@@ -591,7 +643,7 @@ body.clean .sw::after{left:3px}
       <details><summary>¿Cómo puedo pagar?</summary><div>Con Mercado Pago o por transferencia bancaria. Por transferencia tenés un <b>10% OFF</b>.</div></details>
       <details><summary>¿Hay cambios o devoluciones?</summary><div>Al ser un producto personalizado y único, no hacemos cambios ni devoluciones. Si llega con un defecto de fabricación o una falla técnica, nos hacemos responsables y lo cambiamos.</div></details>
       <details><summary>¿Cómo me contacto?</summary><div>Por <a href="https://api.whatsapp.com/send?phone=5491131820326" target="_blank" rel="noopener">WhatsApp</a>, por Instagram en <a href="https://www.instagram.com/mybookinest/" target="_blank" rel="noopener">@mybookinest</a> o por mail a <a href="mailto:bookinest@gmail.com">bookinest@gmail.com</a>.</div></details>
-      <p class="nores" id="nores">No encontramos esa pregunta. Escribinos por WhatsApp y te respondemos.</p>
+      <p class="nores" id="nores">No encontramos esa pregunta. <a data-wa="¡Hola Bookinest! Tengo una consulta." target="_blank" rel="noopener" href="https://wa.me/5491131820326">Escribinos por WhatsApp</a> y te respondemos.</p>
     </div>
   </div>
 </section>
@@ -605,7 +657,7 @@ body.clean .sw::after{left:3px}
         <p>Elegí la historia, sumá tu dedicatoria y regalá algo que se guarda para siempre.</p>
         <div class="ctas">
           <a href="#cuentos" class="btn btn-primary">Elegí su cuento <svg class="ic arr"><use href="#i-arr"/></svg></a>
-          <a href="https://api.whatsapp.com/send?phone=5491131820326" target="_blank" rel="noopener" class="btn btn-wa"><svg class="ic"><use href="#i-wa"/></svg>Preguntanos</a>
+          <a data-wa="¡Hola Bookinest! Quiero hacer una consulta antes de comprar." target="_blank" rel="noopener" href="https://wa.me/5491131820326" class="btn btn-wa"><svg class="ic"><use href="#i-wa"/></svg>Preguntanos por WhatsApp</a>
         </div>
       </div>
       <div class="books" aria-hidden="true">
@@ -631,12 +683,18 @@ body.clean .sw::after{left:3px}
   </div>
 </footer>
 
-<a class="wa" href="https://api.whatsapp.com/send?phone=5491131820326" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg class="ic"><use href="#i-wa"/></svg></a>
+<button class="fab" type="button" id="fab" aria-haspopup="dialog" aria-controls="waSheet"><span class="bub"><svg class="ic"><use href="#i-wa"/></svg></span>¿Dudas? Escribinos</button>
+<div class="wa-sheet" id="waSheet" role="dialog" aria-label="Ayuda por WhatsApp" aria-hidden="true">
+  <div class="top"><h3>¿En qué te ayudamos?</h3><button class="x" type="button" id="waX" aria-label="Cerrar">×</button></div>
+  <p class="hint">Tocá una opción y se abre WhatsApp con el mensaje ya escrito. Te responde una persona.</p>
+  <div id="waQs"></div>
+  <p class="alt">O llamanos al <a href="tel:+5491131820326">11 3182-0326</a></p>
+</div>
 <div class="toast" id="toast" role="status">Código BOOKI copiado</div>
 
 <div class="inspo-bar" role="toolbar" aria-label="Notas de inspiración">
   <button type="button" id="toggleTips" aria-pressed="true"><span class="sw"></span><span class="lbl">Notas</span></button>
-  <button type="button" id="openList"><svg class="ic" style="width:18px;height:18px"><use href="#i-list"/></svg>Te puede faltar <span class="cnt" id="cnt">0/12</span></button>
+  <button type="button" id="openList"><svg class="ic" style="width:18px;height:18px"><use href="#i-list"/></svg>Te puede faltar <span class="cnt" id="cnt">0/14</span></button>
 </div>
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-label="Checklist" aria-hidden="true">
@@ -659,6 +717,8 @@ body.clean .sw::after{left:3px}
     <li><label><input type="checkbox" data-k="gift"><div><b>Opciones para regalar</b><span>Gift card, envío a otra dirección, packaging.</span></div></label></li>
     <li><label><input type="checkbox" data-k="mail"><div><b>Captura de mails</b><span>Para avisar lanzamientos (como la edición Navidad) y recuperar carritos.</span></div></label></li>
     <li><label><input type="checkbox" data-k="pixel"><div><b>Eventos del Pixel de Meta</b><span>Que registre AddToCart, InitiateCheckout y Purchase.</span></div></label></li>
+    <li><label><input type="checkbox" data-k="wapix"><div><b>Medir los clics de WhatsApp</b><span>Evento "Contact" en el Pixel: así sabés cuántas ventas arrancan por chat (esta landing ya lo dispara si el Pixel está cargado).</span></div></label></li>
+    <li><label><input type="checkbox" data-k="wamsg"><div><b>Respuestas rápidas en WhatsApp Business</b><span>Para los mensajes que llegan ya escritos: elegir libro, pedido por chat, fecha especial, estado del pedido.</span></div></label></li>
   </ol>
 </aside>
 
@@ -666,6 +726,16 @@ body.clean .sw::after{left:3px}
 (function(){
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch(e){ return null; } }
+
+  // WhatsApp: todos los links con mensaje ya escrito
+  var WA = '5491131820326';
+  function waLink(t){ return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t); }
+  document.querySelectorAll('[data-wa]').forEach(function(a){ a.href = waLink(a.dataset.wa); });
+  // Si el Pixel de Meta está cargado, cada clic a WhatsApp cuenta como "Contact"
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
+    if (a && typeof window.fbq === 'function') window.fbq('track', 'Contact');
+  });
 
   // Copiar código
   var toast = document.getElementById('toast');
@@ -688,10 +758,10 @@ body.clean .sw::after{left:3px}
   var BOOKS = {
     cumple:{ img:'https://bookinest.com/wp-content/uploads/2026/02/feliz-cumple_Mesa-de-trabajo-1-03-1024x906.png', w:1024, h:906,
       patch:{l:27, t:30.6, w:51.5, h:14, bg:'linear-gradient(90deg,#F0E8D6,#EBE2D0 50%,#E5DBC8)'}, name:{size:14.4, max:52, color:'#C98488'},
-      tr:'$49.500', ot:'$55.000 otros medios', url:'https://bookinest.com/product/feliz-cumpleanos/', def:'OLIVIA' },
+      tr:'$49.500', ot:'$55.000 otros medios', url:'https://bookinest.com/product/feliz-cumpleanos/', def:'OLIVIA', title:'¡Feliz cumpleaños!' },
     naci:{ img:'https://bookinest.com/wp-content/uploads/2026/05/Cuento-nacimiento-nube-931x1024.png', w:931, h:1024,
       patch:{l:19.5, t:30.5, w:62, h:15, bg:'linear-gradient(90deg,#F6E9D8,#F0E2D1 50%,#EADCCA)'}, name:{size:17.8, max:60, color:'#4A7C78'},
-      tr:'$45.000', ot:'$50.000 otros medios', url:'https://bookinest.com/product/feliz-nacimiento/', def:'MATEO' }
+      tr:'$45.000', ot:'$50.000 otros medios', url:'https://bookinest.com/product/feliz-nacimiento/', def:'MATEO', title:'¡Feliz nacimiento!' }
   };
   var cur = 'cumple', img = document.getElementById('coverImg'), patch = document.getElementById('patch'), cname = document.getElementById('cname'),
       kid = document.getElementById('kid'), go = document.getElementById('go'), cover = document.getElementById('cover');
@@ -713,6 +783,7 @@ body.clean .sw::after{left:3px}
     document.getElementById('pTr').textContent = b.tr;
     document.getElementById('pOt').textContent = b.ot;
     var u = new URL(b.url); if (n) u.searchParams.set('nombre', n); go.href = u.toString();
+    document.getElementById('goWa').href = waLink('¡Hola! Quiero pedir el cuento "' + b.title + '"' + (n ? ' para ' + n : '') + '. ¿Me ayudan?');
   }
   document.querySelectorAll('.pick button').forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -776,6 +847,26 @@ body.clean .sw::after{left:3px}
     items.forEach(function(d){ var hit = !v || norm(d.textContent).indexOf(v) > -1; d.hidden = !hit; if (hit) any = true; if (v && hit) d.open = true; });
     nores.style.display = any ? 'none' : 'block';
   });
+
+  // Hoja de ayuda por WhatsApp
+  var sheet = document.getElementById('waSheet'), fab = document.getElementById('fab');
+  function waQs(){
+    var n = kid.value.trim(), b = BOOKS[cur];
+    var qs = [
+      n ? ['Quiero pedir "' + b.title + '" para ' + n, '¡Hola! Quiero pedir el cuento "' + b.title + '" para ' + n + '. ¿Me ayudan?']
+        : ['Quiero ayuda para elegir un cuento', '¡Hola Bookinest! Quiero regalar un cuento y necesito ayuda para elegir.'],
+      ['Quiero hacer el pedido por WhatsApp', '¡Hola! Prefiero hacer el pedido por acá. ¿Me ayudan?'],
+      ['¿Llega a tiempo para una fecha?', '¡Hola! Necesito el cuento para una fecha especial. ¿Llega a tiempo si lo pido hoy?'],
+      ['Ya compré y quiero consultar mi pedido', '¡Hola! Ya hice un pedido y quiero consultar cómo va. Mi nombre es: ']
+    ];
+    document.getElementById('waQs').innerHTML = qs.map(function(q){
+      return '<a class="wa-q" target="_blank" rel="noopener" href="' + waLink(q[1]) + '"><svg class="ic"><use href="#i-wa"/></svg>' + q[0].replace(/[<>&]/g, '') + '</a>';
+    }).join('');
+  }
+  function openSheet(o){ if (o) waQs(); sheet.classList.toggle('open', o); sheet.setAttribute('aria-hidden', !o); fab.setAttribute('aria-expanded', o); if (o) setTimeout(function(){ document.getElementById('waX').focus(); }, 60); }
+  fab.addEventListener('click', function(){ openSheet(!sheet.classList.contains('open')); });
+  document.getElementById('waX').addEventListener('click', function(){ openSheet(false); fab.focus(); });
+  addEventListener('keydown', function(e){ if (e.key === 'Escape' && sheet.classList.contains('open')){ openSheet(false); fab.focus(); } });
 
   // Notas + checklist
   var tb = document.getElementById('toggleTips');
