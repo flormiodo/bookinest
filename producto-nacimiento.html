@@ -330,8 +330,6 @@ body.clean .sw::after{left:3px}
 .thumb.photo img{width:100%;height:100%;object-fit:cover}
 .days-btn{display:inline-flex;align-items:center;gap:8px;border:2px solid #7FB8B2;background:#EEF8F6;color:#2F6460;border-radius:999px;padding:7px 16px;font-family:'Fredoka',sans-serif;font-weight:500;font-size:.95rem;cursor:pointer;transition:background .15s,transform .15s}
 .days-btn:hover{background:#E0F2EF;transform:translateY(-1px)}
-#bubbles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
-.fx-btn{position:fixed;left:18px;bottom:72px;z-index:70;border:none;cursor:pointer;background:#fff;color:var(--ink);border-radius:999px;padding:8px 14px;font-family:'Fredoka',sans-serif;font-weight:500;box-shadow:0 10px 24px rgba(0,0,0,.15);display:flex;align-items:center;gap:6px}
 .dmodal{position:fixed;inset:0;z-index:120;display:grid;place-items:center;background:rgba(29,43,68,.45);padding:16px;opacity:0;pointer-events:none;transition:opacity .25s}
 .dmodal.open{opacity:1;pointer-events:auto}
 .dcard{background:#fff;border-radius:30px;max-width:460px;width:100%;padding:28px 24px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.3);transform:scale(.94);transition:transform .3s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden}
@@ -352,12 +350,10 @@ body.clean .sw::after{left:3px}
 .heart{position:absolute;bottom:-20px;font-size:1.4rem;pointer-events:none;animation:rise 2.4s ease-out forwards}
 @keyframes rise{to{transform:translateY(-420px) scale(1.3);opacity:0}}
 @media (max-width:640px){
-  .fx-btn{left:12px;bottom:136px;padding:7px 11px}
-  .fx-btn .lbl{display:none}
   .days-btn{font-size:.88rem;padding:6px 12px}
   .plist.two-items{grid-template-columns:1fr}
 }
-@media (prefers-reduced-motion:reduce){#bubbles,.fx-btn{display:none}.heart{display:none}}
+@media (prefers-reduced-motion:reduce){.heart{display:none}}
 </style>
 </head>
 <body>
@@ -617,8 +613,6 @@ body.clean .sw::after{left:3px}
 </div>
 <button class="notes-btn" type="button" id="notes" aria-pressed="true"><span class="sw"></span><span class="lbl">Notas</span></button>
 <div class="toast" id="toast" role="status">Código BOOKI copiado</div>
-<canvas id="bubbles" aria-hidden="true"></canvas>
-<button class="fx-btn" type="button" id="fxBtn" aria-pressed="true">🫧 <span class="lbl" id="fxLbl">Sacar burbujas</span></button>
 <div class="dmodal" id="dmodal" role="dialog" aria-modal="true" aria-labelledby="dT" aria-hidden="true">
   <div class="dcard" id="dcard">
     <h3 id="dT">🍼 ¿Cuántos días tiene?</h3>
@@ -722,31 +716,6 @@ body.clean .sw::after{left:3px}
 
   // ===== Tema Nacimiento =====
   var rM = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var bc = document.getElementById('bubbles'), bx = bc.getContext('2d'), bubs = [], braf = null, fxOn = !rM;
-  function bsize(){ var d = Math.min(devicePixelRatio || 1, 2); bc.width = innerWidth * d; bc.height = innerHeight * d; bx.setTransform(d,0,0,d,0,0); }
-  function bub(bottom){ return { x: Math.random() * innerWidth, y: bottom ? innerHeight + 30 : Math.random() * innerHeight, r: 6 + Math.random() * 14, s: .25 + Math.random() * .5, w: Math.random() * 6.28 }; }
-  function bseed(){ var n = innerWidth < 640 ? 10 : 18; bubs = []; for (var i = 0; i < n; i++) bubs.push(bub(false)); }
-  function bframe(){
-    bx.clearRect(0, 0, innerWidth, innerHeight);
-    for (var i = 0; i < bubs.length; i++){
-      var b = bubs[i]; b.y -= b.s; b.w += .015; b.x += Math.sin(b.w) * .35;
-      if (b.y < -40){ bubs[i] = bub(true); continue; }
-      var g = bx.createRadialGradient(b.x - b.r * .35, b.y - b.r * .35, b.r * .1, b.x, b.y, b.r);
-      g.addColorStop(0, 'rgba(255,255,255,.75)'); g.addColorStop(.7, 'rgba(160,215,208,.18)'); g.addColorStop(1, 'rgba(120,190,200,.35)');
-      bx.beginPath(); bx.arc(b.x, b.y, b.r, 0, 6.283); bx.fillStyle = g; bx.fill();
-      bx.lineWidth = 1; bx.strokeStyle = 'rgba(110,180,190,.45)'; bx.stroke();
-    }
-    braf = requestAnimationFrame(bframe);
-  }
-  function bon(){ if (!braf){ bsize(); if (!bubs.length) bseed(); braf = requestAnimationFrame(bframe); } }
-  function boff(){ if (braf){ cancelAnimationFrame(braf); braf = null; } bx.clearRect(0, 0, innerWidth, innerHeight); }
-  var fxBtn = document.getElementById('fxBtn');
-  function setFx(on){ fxOn = on; fxBtn.setAttribute('aria-pressed', on); document.getElementById('fxLbl').textContent = on ? 'Sacar burbujas' : 'Poner burbujas'; if (on) bon(); else boff(); try { localStorage.setItem('bk_fx', on ? '1' : '0'); } catch(e){} }
-  var fxPref = null; try { fxPref = localStorage.getItem('bk_fx'); } catch(e){}
-  if (!rM) setFx(fxPref !== '0');
-  fxBtn.addEventListener('click', function(){ setFx(!fxOn); });
-  addEventListener('resize', function(){ if (braf) bsize(); });
-  document.addEventListener('visibilitychange', function(){ if (document.hidden) boff(); else if (fxOn) bon(); });
 
   // ¿Cuántos días tiene?
   var dm = document.getElementById('dmodal'), dres = document.getElementById('dres'), dcard = document.getElementById('dcard');
