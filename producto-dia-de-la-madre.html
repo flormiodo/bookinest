@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día de la madre | Cuento personalizado | Bookinest</title>
+<meta name="description" content="Un libro donde tu peque es protagonista y sale de aventura para encontrar el regalo perfecto para mamá. Personalizado con los nombres y tu dedicatoria.">
+<meta name="theme-color" content="#C0546A">
+<link rel="icon" href="https://bookinest.com/wp-content/uploads/2026/09/cropped-Untitled-1-1-150x150.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2761B3; --blue-d:#1B4A8C; --blue-2:#3E7DD4;
+  --sky:#DCEEF9; --sky-2:#BFE0F2; --soft:#F3F8FD;
+  --orange:#E87722; --orange-d:#C9600F; --orange-soft:#FFF1E4;
+  --sun:#F5A623; --ink:#1D2B44; --ink-2:#4A5873; --line:#E3E8F0;
+  --r:28px; --shadow:0 16px 44px rgba(29,43,68,.10); --shadow-lg:0 28px 70px rgba(29,43,68,.18);
+  --tip:#FFF6C9; --tip-b:#E9C94A;
+  --wa:#168A45; --wa-h:#0F7339; --wa-d:#0C5C2E; --ok:#1F7A47;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:'Roboto',system-ui,sans-serif;font-size:17px;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+h1,h2,h3,h4{font-family:'Fredoka','Roboto',sans-serif;line-height:1.08;font-weight:600;letter-spacing:-.01em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.ic{width:22px;height:22px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic.f{fill:currentColor;stroke:none}
+.section{padding:84px 0}
+.soft{background:var(--soft)}
+.only-m{display:none!important}
+@media (max-width:980px){.only-d{display:none!important}.only-m{display:flex!important}body.clean .only-m{display:none!important}}
+.eyebrow{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;display:block}
+.h2{font-size:clamp(1.9rem,4.2vw,2.8rem)}
+.h2 em{font-style:normal;color:var(--blue)}
+.lead{color:var(--ink-2);font-size:1.08rem;margin-top:12px;max-width:620px}
+.head{margin-bottom:36px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.12rem;border-radius:999px;padding:15px 28px;min-height:58px;cursor:pointer;border:2px solid transparent;transition:transform .15s,box-shadow .15s,background .15s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 5px 0 var(--orange-d),0 14px 26px rgba(232,119,34,.26)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 5px 0 var(--wa-d)}
+.btn-wa:hover{background:var(--wa-h)}
+.btn .ic{width:20px;height:20px;transition:transform .2s}
+.btn .ic.f{width:22px;height:22px}
+.btn:hover .ic.arr{transform:translateX(4px)}
+.btn-block{width:100%}
+
+/* Inspo notes */
+.tip{position:relative;display:flex;gap:10px;align-items:flex-start;max-width:600px;background:var(--tip);border:1.5px solid var(--tip-b);border-radius:16px;padding:12px 14px;font-size:.9rem;line-height:1.45;color:#5A4A12;box-shadow:0 8px 20px rgba(90,74,18,.10);margin:18px 0 0}
+.tip b{display:block;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.95rem;color:#3F3408;margin-bottom:2px}
+.tip .k{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:700;background:#fff;border:1.5px solid var(--tip-b)}
+.tip.warn{background:#FFE9E4;border-color:#E9A08F;color:#6B2A1C}
+.tip.warn b{color:#4E1C11}.tip.warn .k{border-color:#E9A08F}
+body.clean .tip,body.clean .inspo-only{display:none!important}
+
+/* Promo + header */
+.promo{background:var(--ink);color:#fff;font-size:.9rem;text-align:center;padding:9px 16px}
+.promo b{color:var(--sun)}
+.code{display:inline-flex;align-items:center;gap:6px;border:1.5px dashed rgba(255,255,255,.5);border-radius:8px;padding:1px 9px;font-family:'Fredoka',sans-serif;font-weight:600;letter-spacing:.08em;background:transparent;color:#fff;cursor:pointer;margin:0 4px}
+.code .ic{width:14px;height:14px}
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{display:flex;align-items:center;gap:9px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.45rem;color:var(--blue)}
+.logo img{width:40px;height:40px}
+.hright{display:flex;align-items:center;gap:6px}
+.hwa{display:inline-flex;align-items:center;gap:8px;color:var(--wa);font-family:'Fredoka',sans-serif;font-weight:600;padding:8px 12px;border-radius:999px;min-height:44px}
+.hwa:hover{background:#F1FAF4}
+.hlink{font-family:'Fredoka',sans-serif;font-weight:500;color:var(--ink-2);padding:8px 12px;border-radius:999px}
+.hlink:hover{background:var(--soft);color:var(--blue)}
+
+/* Breadcrumb */
+.crumb{font-size:.92rem;color:var(--ink-2);padding:18px 0 0}
+.crumb a{color:var(--blue);font-weight:500}
+.crumb span{margin:0 6px;opacity:.5}
+
+/* Product top */
+.ptop{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"gal head" "gal info";column-gap:48px;row-gap:0;padding:22px 0 70px;align-items:start}
+.phead{grid-area:head}
+.gallery{grid-area:gal;position:sticky;top:90px}
+.info{grid-area:info}
+#buy{scroll-margin-top:84px}
+.buy.flash{animation:flash 1.2s ease}
+@keyframes flash{0%,100%{box-shadow:var(--shadow)}30%{box-shadow:0 0 0 6px rgba(232,119,34,.35),var(--shadow)}}
+.from-row{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;margin-top:14px}
+.from-row .revline{margin-top:0}
+.from{display:none;font-size:.98rem;color:var(--ink-2)}
+.from b{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.2rem;color:var(--ink)}
+.main-img{position:relative;border-radius:32px;background:#fff;border:1.5px solid var(--line);aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden}
+.main-img img{width:88%;height:88%;object-fit:contain;transition:opacity .25s}
+.main-img .pill{position:absolute;left:16px;top:16px;background:var(--orange);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.85rem;padding:5px 13px;border-radius:999px}
+.thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}
+.thumb{aspect-ratio:1;border-radius:16px;border:2px solid var(--line);background:#fff;overflow:hidden;cursor:pointer;padding:0;display:grid;place-items:center}
+.thumb img{width:90%;height:90%;object-fit:contain}
+.thumb[aria-current="true"]{border-color:var(--blue)}
+.thumb.ph{border-style:dashed;border-color:var(--tip-b);background:var(--tip);cursor:default;font-size:.72rem;color:#6B5510;text-align:center;line-height:1.2;padding:6px}
+.phead .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.phead .tags span{font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 11px;border-radius:999px;background:#EAF2FB;color:var(--blue)}
+.phead h1{font-size:clamp(2.3rem,5vw,3.4rem);font-weight:700}
+.hook{font-size:1.15rem;color:var(--ink-2);margin:12px 0 0}
+.hook b{color:var(--ink)}
+.revline{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.95rem;color:var(--ink-2)}
+.revline .st{color:var(--sun);letter-spacing:2px}
+.revline a{color:var(--blue);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.buy{margin-top:26px;background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
+.buy .lbl{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.12rem;margin-bottom:12px;display:block}
+.covers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cv{position:relative;text-align:left;border:2.5px solid var(--line);border-radius:20px;padding:16px 16px 14px;background:#fff;cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s;min-height:120px}
+.cv:hover{border-color:var(--sky-2)}
+.cv[aria-checked="true"]{border-color:var(--blue);background:var(--soft);box-shadow:0 0 0 4px rgba(39,97,179,.10)}
+.cv .radio{position:absolute;right:14px;top:16px;width:24px;height:24px;border-radius:50%;border:2.5px solid var(--line);background:#fff}
+.cv[aria-checked="true"] .radio{border-color:var(--blue);background:radial-gradient(circle,var(--blue) 0 45%,#fff 48%)}
+.cv b{display:block;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.2rem;padding-right:30px}
+.cv .pr{display:block;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.45rem;margin-top:8px;line-height:1.1}
+.cv small{display:block;color:var(--ink-2);font-size:.85rem;margin-top:4px}
+.cv .trp{display:inline-block;font-style:normal;font-family:'Roboto',sans-serif;font-weight:500;font-size:.72rem;letter-spacing:.02em;color:var(--ok);background:#EAF7EF;border-radius:999px;padding:3px 8px;vertical-align:4px;margin-left:2px}
+.cv .best{position:absolute;top:-12px;left:14px;background:var(--orange);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.76rem;padding:3px 10px;border-radius:999px}
+.total{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:20px 0 16px;padding-top:18px;border-top:1.5px dashed var(--line)}
+.total .big{font-family:'Fredoka',sans-serif;font-weight:600;font-size:2.3rem;line-height:1}
+.total .tr{display:inline-flex;align-items:center;gap:6px;background:#EAF7EF;color:var(--ok);border-radius:999px;padding:4px 11px;font-size:.88rem;font-weight:500;margin-left:6px;vertical-align:5px}
+.total .ot{color:var(--ink-2);font-size:.95rem}
+.ebook{display:flex;gap:10px;align-items:center;font-size:.92rem;color:var(--ink-2);margin:-4px 0 16px}
+.ebook .ic{width:18px;height:18px;color:var(--blue)}
+.or{display:flex;align-items:center;gap:12px;color:var(--ink-2);font-size:.92rem;margin:14px 0}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.facts{display:grid;gap:10px;margin-top:20px}
+.fact{display:flex;gap:12px;align-items:flex-start;font-size:.97rem}
+.fact .ic{width:40px;height:40px;padding:9px;border-radius:12px;background:var(--soft);color:var(--blue)}
+.fact b{display:block;font-family:'Fredoka',sans-serif;font-weight:600}
+.fact span{color:var(--ink-2)}
+
+/* What gets personalized */
+.perso{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+.perso img{width:220px;height:auto;aspect-ratio:1/1;object-fit:contain}
+.plist{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.pi{background:#fff;border-radius:22px;padding:22px;border:1.5px solid var(--line)}
+.pi .ic{width:46px;height:46px;padding:11px;border-radius:14px;background:var(--blue);color:#fff;margin-bottom:12px}
+.pi:nth-child(2) .ic{background:var(--orange)}
+.pi:nth-child(3) .ic{background:var(--wa)}
+.pi b{display:block;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.2rem}
+.pi span{color:var(--ink-2);font-size:.95rem}
+.nophoto{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:#EAF7EF;color:var(--ok);border-radius:999px;padding:8px 16px;font-weight:500}
+.nophoto .ic{width:18px;height:18px}
+
+/* Story */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.story .big{font-family:'Fredoka',sans-serif;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:500;line-height:1.25;color:var(--ink)}
+.story .big em{font-style:normal;color:var(--orange)}
+.story p.t{color:var(--ink-2);margin-top:16px;font-size:1.05rem}
+.beats{list-style:none;position:relative;display:grid;gap:22px}
+.beats::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;border-left:3px dashed var(--sky-2)}
+.beats li{display:grid;grid-template-columns:44px 1fr;gap:16px;position:relative}
+.beats .n{width:44px;height:44px;border-radius:50%;background:#fff;border:3px solid var(--blue);display:grid;place-items:center;font-family:'Fredoka',sans-serif;font-weight:700;color:var(--blue);z-index:1}
+.beats li:nth-child(2) .n{border-color:var(--orange);color:var(--orange)}
+.beats li:nth-child(3) .n{border-color:var(--sun);color:var(--sun)}
+.beats b{display:block;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.2rem}
+.beats span{color:var(--ink-2)}
+
+/* Why */
+.why{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.w{display:flex;gap:16px;align-items:flex-start;padding:22px;border-radius:22px;background:#fff;border:1.5px solid var(--line)}
+.w .ic{width:48px;height:48px;padding:12px;border-radius:14px;background:var(--orange-soft);color:var(--orange)}
+.w b{display:block;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.18rem}
+.w span{color:var(--ink-2)}
+
+/* Inside placeholders */
+.inside{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.slot{aspect-ratio:1;border-radius:22px;border:2.5px dashed var(--tip-b);background:var(--tip);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#6B5510;font-size:.9rem;text-align:center;padding:14px}
+.slot .ic{width:32px;height:32px}
+
+/* Specs */
+.specs-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+.specs{border-radius:24px;border:1.5px solid var(--line);overflow:hidden;background:#fff}
+.specs div{display:grid;grid-template-columns:1fr 1.3fr;gap:12px;padding:15px 20px;border-bottom:1px solid var(--line)}
+.specs div:last-child{border-bottom:none}
+.specs dt{color:var(--ink-2);font-size:.95rem}
+.specs dd{font-family:'Fredoka',sans-serif;font-weight:500;font-size:1.05rem}
+
+/* Reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rv{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:22px}
+.rv .st{color:var(--sun);letter-spacing:2px}
+.rv h4{font-size:1.12rem;margin:8px 0 6px}
+.rv p{color:var(--ink-2);font-size:.96rem}
+.rv .who{margin-top:12px;font-size:.88rem;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.rv .who b{font-family:'Fredoka',sans-serif;font-weight:600}
+.rv .ver{display:inline-flex;align-items:center;gap:4px;color:var(--ok);font-size:.8rem}
+.rv .ver .ic{width:14px;height:14px}
+
+/* FAQ */
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{border:1.5px solid var(--line);border-radius:18px;padding:0 22px;background:#fff}
+.faq details[open]{border-color:var(--sky-2);box-shadow:0 8px 24px rgba(39,97,179,.08)}
+.faq summary{list-style:none;cursor:pointer;padding:19px 0;font-family:'Fredoka',sans-serif;font-weight:500;font-size:1.1rem;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--soft);color:var(--blue);display:grid;place-items:center;font-size:1.25rem;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details div{padding:0 0 20px;color:var(--ink-2)}
+.faq a{color:var(--blue);font-weight:500}
+.helpline{display:flex;align-items:center;gap:14px;margin-top:22px;padding:16px 20px;border-radius:20px;background:#F1FAF4;border:1.5px solid #CDEBD8;color:#0C5C2E;font-weight:500;max-width:820px}
+.helpline .ic{width:30px;height:30px;color:var(--wa)}
+
+/* Related */
+.rel{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rb{border-radius:24px;border:1.5px solid var(--line);background:#fff;padding:10px 10px 16px;transition:transform .2s,box-shadow .2s}
+.rb:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.rb .im{aspect-ratio:1;border-radius:16px;display:grid;place-items:center;overflow:hidden}
+.rb .im img{width:88%;height:88%;object-fit:contain}
+.rb h3{font-size:1.15rem;margin:10px 8px 2px}
+.rb p{margin:0 8px;color:var(--ink-2);font-size:.92rem}
+.rb p b{color:var(--ink);font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.08rem}
+.combo{margin-top:22px;display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;background:var(--orange-soft);border-radius:999px;padding:12px 20px;font-weight:500;text-align:center}
+.combo b{color:var(--orange-d)}
+
+/* Footer */
+.footer{background:var(--ink);color:rgba(255,255,255,.75);padding:44px 0 130px;font-size:.95rem}
+.footer .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.footer .logo{color:#fff}
+.footer nav{display:flex;gap:18px;flex-wrap:wrap}
+.footer a:hover{color:#fff}
+
+/* Sticky buy bar (mobile) */
+.buybar{position:fixed;left:0;right:0;bottom:0;z-index:65;background:#fff;border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(29,43,68,.10);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:none;align-items:center;gap:10px;transform:translateY(110%);transition:transform .3s}
+.buybar.show{transform:none}
+.buybar .m-go{display:none}
+.buybar[data-mode="go"] .m-go{display:inline-flex}
+.buybar[data-mode="go"] .m-pick{display:none}
+.buybar .bp .m-pick,.buybar .bp .m-go{flex-direction:column}
+.buybar .bp .m-pick{display:flex}
+.buybar[data-mode="go"] .bp .m-pick{display:none}
+.buybar[data-mode="go"] .bp .m-go{display:flex}
+.buybar .bp .m-pick b{font-size:1.3rem;line-height:1.1}
+.buybar .bp{flex:1;min-width:0;line-height:1.2}
+.buybar .bp b{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.3rem;display:block}
+.buybar .bp small{color:var(--ink-2);font-size:.8rem}
+.buybar .btn{min-height:50px;padding:10px 18px;font-size:1.02rem}
+.buybar .wa-mini{width:50px;height:50px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;flex:none}
+.buybar .wa-mini .ic{width:26px;height:26px}
+
+/* WhatsApp FAB + sheet */
+.fab{position:fixed;right:18px;bottom:18px;z-index:70;display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;border:0;border-radius:999px;padding:10px 22px 10px 10px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.1rem;cursor:pointer;box-shadow:0 12px 28px rgba(12,92,46,.35);min-height:62px}
+.fab:hover{background:var(--wa-h)}
+.fab .bub{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center}
+.fab .ic{width:26px;height:26px}
+.wa-sheet{position:fixed;right:18px;bottom:92px;z-index:95;width:min(400px,calc(100% - 24px));background:#fff;border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.25);padding:22px;transform:translateY(16px);opacity:0;pointer-events:none;transition:all .25s}
+.wa-sheet.open{transform:none;opacity:1;pointer-events:auto}
+.wa-sheet .top{display:flex;justify-content:space-between;align-items:center}
+.wa-sheet h3{font-size:1.45rem}
+.wa-sheet .x{border:none;background:var(--soft);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem}
+.wa-sheet .hint{color:var(--ink-2);font-size:.95rem;margin:6px 0 14px}
+.wa-q{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;border:2px solid var(--line);font-weight:500;margin-bottom:8px;min-height:56px}
+.wa-q:hover{border-color:var(--wa);background:#F1FAF4}
+.wa-q .ic{color:var(--wa)}
+.wa-sheet .alt{margin-top:12px;font-size:.95rem;color:var(--ink-2);text-align:center}
+.wa-sheet .alt a{color:var(--blue);font-weight:700}
+.notes-btn{position:fixed;left:18px;bottom:18px;z-index:70;display:flex;align-items:center;gap:8px;border:none;cursor:pointer;background:var(--ink);color:#fff;border-radius:999px;padding:10px 16px;font-family:'Fredoka',sans-serif;font-weight:500;box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.sw{width:34px;height:19px;border-radius:999px;background:var(--sun);position:relative}
+.sw::after{content:"";position:absolute;top:3px;left:18px;width:13px;height:13px;border-radius:50%;background:#fff;transition:left .2s}
+body.clean .sw{background:#56607A}
+body.clean .sw::after{left:3px}
+.toast{position:fixed;left:50%;top:20px;transform:translate(-50%,-20px);opacity:0;z-index:100;background:var(--ink);color:#fff;border-radius:999px;padding:10px 18px;font-weight:500;transition:all .3s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Responsive */
+@media (max-width:980px){
+  .ptop,.story,.specs-wrap{grid-template-columns:1fr;gap:28px}
+  .gallery{position:static}
+  .perso{grid-template-columns:1fr;gap:10px}
+  .perso img{display:none}
+  .plist,.revs,.rel{grid-template-columns:1fr}
+  .why{grid-template-columns:1fr}
+  .inside{grid-template-columns:repeat(2,1fr)}
+  .rel{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:640px){
+  .section{padding:64px 0}
+  .hlink{display:none}
+  .hwa span{display:none}
+  .hwa{width:46px;height:46px;padding:0;justify-content:center;background:#E3F5EA}
+  .ptop{padding-top:10px;grid-template-columns:1fr;grid-template-areas:"head" "gal" "info";row-gap:16px}
+  .phead .tags{margin-bottom:8px;gap:6px}
+  .phead .tags span{font-size:.7rem;padding:4px 9px}
+  .phead h1{font-size:2.1rem}
+  .hook{font-size:1.02rem;margin-top:8px}
+  .from{display:inline}
+  .from-row{margin-top:10px}
+  .revline{font-size:.88rem}
+  .main-img{aspect-ratio:16/11}
+  .main-img img{width:78%;height:92%}
+  .main-img .pill{left:12px;top:12px;font-size:.78rem}
+  .thumbs{margin-top:8px}
+  .thumb{border-radius:12px}
+  .crumb{padding-top:12px;font-size:.85rem}
+  .buy{margin-top:6px}
+  .main-img{border-radius:24px}
+  .thumbs{grid-template-columns:repeat(5,1fr);gap:8px}
+  .buy{padding:18px;border-radius:24px}
+  .covers{gap:10px}
+  .cv{padding:14px 12px 12px}
+  .cv b{font-size:1rem;padding-right:26px;white-space:nowrap}
+  .cv .radio{right:10px;top:14px;width:22px;height:22px}
+  .cv .pr{font-size:1.25rem}
+  .cv .trp{display:table;margin:4px 0 0;vertical-align:0}
+  .total .big{font-size:2rem}
+  .rel{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .rb{padding:6px 6px 10px;border-radius:18px}
+  .rb h3{font-size:.92rem;margin:8px 4px 2px}
+  .rb p{margin:0 4px;font-size:.8rem}
+  .rb p b{font-size:.95rem}
+  .buybar{display:flex}
+  .fab{display:none}
+  .notes-btn{bottom:84px;left:12px;padding:8px 12px}
+  .notes-btn .lbl{display:none}
+  .wa-sheet{right:12px;bottom:84px}
+  .footer{padding-bottom:150px}
+}
+
+.main-img img.fill{width:100%;height:100%;object-fit:cover}
+.thumb.photo img{width:100%;height:100%;object-fit:cover}
+.covers.single{grid-template-columns:1fr}
+.plist.two-items{grid-template-columns:repeat(2,1fr)}
+.plist.four-items{grid-template-columns:repeat(2,1fr)}
+.privacy{display:flex;gap:10px;align-items:flex-start;margin-top:18px;font-size:.92rem;color:var(--ink-2);max-width:620px}
+.privacy .ic{width:18px;height:18px;margin-top:3px;color:var(--wa)}
+.slot.real{padding:0;border:none;overflow:hidden;background:#fff}
+.slot.real img{width:100%;height:100%;object-fit:cover}
+@media (max-width:640px){.plist.two-items,.plist.four-items{grid-template-columns:1fr}}
+.gag{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--gc);background:var(--gb);color:var(--gt);border-radius:999px;padding:7px 16px;font-family:'Fredoka',sans-serif;font-weight:500;font-size:.95rem;cursor:pointer;transition:background .15s,transform .15s}
+.gag:hover{transform:translateY(-1px)}
+.gag .ic{width:18px;height:18px}
+@media (max-width:640px){.gag{font-size:.88rem;padding:6px 12px}}
+.dmodal{position:fixed;inset:0;z-index:120;display:grid;place-items:center;background:rgba(29,43,68,.45);padding:16px;opacity:0;pointer-events:none;transition:opacity .25s}
+.dmodal.open{opacity:1;pointer-events:auto}
+.dcard{background:#fff;border-radius:30px;max-width:480px;width:100%;padding:26px 22px;box-shadow:0 30px 80px rgba(0,0,0,.3);transform:scale(.94);transition:transform .3s cubic-bezier(.2,.8,.2,1);max-height:92vh;overflow:auto}
+.dmodal.open .dcard{transform:none}
+.dcard h3{font-size:1.6rem;text-align:center}
+.dcard>p{color:var(--ink-2);text-align:center;margin-bottom:14px}
+.dfields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dfields label,.dmsg{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.95rem;display:grid;gap:6px}
+.dfields input,.dmsg textarea{padding:12px 14px;border-radius:14px;border:2px solid var(--line);background:var(--soft);font:500 1rem 'Roboto',sans-serif;outline:none;width:100%}
+.dmsg{margin-top:10px}
+.dmsg textarea{resize:none;height:84px}
+.dfields input:focus,.dmsg textarea:focus{border-color:#C0546A;background:#fff}
+.dpage{margin:16px 0;border-radius:18px;padding:22px 20px;background:#FBF3EC;border:1.5px solid #EED9C8;box-shadow:inset 0 0 0 6px #fff;text-align:center;font-family:'Fredoka',sans-serif;color:#6B3A2E;min-height:150px}
+.dpage .to{font-size:1.25rem;font-weight:600}
+.dpage .msg{font-weight:400;font-size:1.05rem;margin:10px 0;white-space:pre-line}
+.dpage .from{font-weight:500;color:#C0546A}
+.dcard .x{display:block;margin:10px auto 0;border:none;background:none;color:var(--ink-2);text-decoration:underline;cursor:pointer}
+@media (max-width:640px){.dfields{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arr" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="6" width="14" height="11" rx="1.5"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="18.5" r="2"/><circle cx="18" cy="18.5" r="2"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 8a2 2 0 012-2h2l2-3h6l2 3h2a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+  <symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V5h16v2M9 19h6M12 5v14"/></symbol>
+  <symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 21h16v-8a2 2 0 00-2-2H6a2 2 0 00-2 2z"/><path d="M4 16c2 1 4 1 5.5 0s3.5-1 5 0 3.5 1 5.5 0M12 11V7M12 4.5v-.5"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 00-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L2 12V2h10l8.6 8.6a2 2 0 010 2.8z"/><circle cx="7" cy="7" r="1.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.7-5 4.5 1.4 6.6L12 16.8 6.1 20l1.4-6.6-5-4.5 6.6-.7z"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></symbol>
+  <symbol id="i-abc" viewBox="0 0 24 24"><path d="M3 17l3-9 3 9M4 14h4M12 8h3a2 2 0 010 4h-3zM12 12h3.5a2.5 2.5 0 010 5H12zM21 9a3 3 0 00-3-1c-2 0-3 2-3 4.5s1 4.5 3 4.5a3 3 0 003-1"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1 0 1.5-.8 1.5-1.5 0-.4-.2-.8-.4-1.1-.3-.3-.4-.6-.4-1 0-.8.7-1.4 1.5-1.4H16a5 5 0 005-5c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16.5" cy="10.5" r="1"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></symbol>
+  <symbol id="i-camoff" viewBox="0 0 24 24"><path d="M2 2l20 20M9 4h6l2 3h2a2 2 0 012 2v9M3.5 7H5a2 2 0 00-2 2v9a2 2 0 002 2h13"/><path d="M14.1 14.1A3 3 0 019.9 9.9"/></symbol>
+</svg>
+
+<div class="promo"><b>20% OFF</b> llevando 2 o más libros con el código <button class="code" type="button" id="copyCode">BOOKI <svg class="ic"><use href="#i-copy"/></svg></button> · <b>10% OFF</b> por transferencia</div>
+
+<header class="header">
+  <div class="wrap header-in">
+    <a href="landing.html" class="logo"><img src="https://bookinest.com/wp-content/uploads/2026/09/cropped-Untitled-1-1-150x150.png" alt="">bookinest</a>
+    <div class="hright">
+      <a class="hlink" href="landing.html#cuentos">Todos los cuentos</a>
+      <a class="hwa" data-wa="¡Hola! Tengo una consulta sobre el cuento Día de la madre." target="_blank" rel="noopener" href="https://wa.me/5491131820326" aria-label="WhatsApp"><svg class="ic f"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumb" aria-label="Ruta"><a href="landing.html">Inicio</a><span>›</span><a href="landing.html#cuentos">Cuentos</a><span>›</span>Día de la madre</nav>
+
+  <!-- ============ PRODUCTO ============ -->
+  <section class="ptop">
+    <div class="phead">
+      <div class="tags"><span>Para mamá</span><span>Personalizado con su nombre</span></div>
+      <h1>Día de la madre</h1>
+      <p class="hook">¿Y si el regalo para mamá fuera <b>un libro donde su hijo o hija es el protagonista?</b></p>
+      <div class="from-row">
+        <button class="gag" type="button" id="dedBtn" style="--gc:#C0546A;--gb:#FFF1F3;--gt:#8E3B48">💌 Mirá cómo queda la dedicatoria</button>
+        <a class="from" href="#buy">Desde <b>$45.000</b> por transferencia</a>
+      </div>
+      
+    </div>
+    <div class="gallery">
+      <div class="main-img">
+        <span class="pill" style="background:#C0546A">Para mamá</span>
+        <img id="mainImg" src="https://bookinest.com/wp-content/uploads/2026/09/cuento-mama-1024x1024.png" alt="Tapa del cuento Día de la madre">
+      </div>
+      <div class="thumbs">
+        <button class="thumb" type="button" aria-current="true" data-src="https://bookinest.com/wp-content/uploads/2026/09/cuento-mama-1024x1024.png"><img src="https://bookinest.com/wp-content/uploads/2026/09/cuento-mama-150x150.png" alt="Tapa del cuento Día de la madre"></button>
+        <button class="thumb photo" type="button" data-fit="cover" data-src="https://bookinest.com/wp-content/uploads/2026/09/cuento-mama-abierto-1024x1024.png"><img src="https://bookinest.com/wp-content/uploads/2026/09/cuento-mama-abierto-150x150.png" alt="Páginas de adentro" loading="lazy"></button>
+        <button class="thumb photo" type="button" data-fit="cover" data-src="https://bookinest.com/wp-content/uploads/2026/09/Gemini_Generated_Image_gtze1zgtze1zgtze-1019x1024.jpeg"><img src="https://bookinest.com/wp-content/uploads/2026/09/Gemini_Generated_Image_gtze1zgtze1zgtze-150x150.jpeg" alt="Mamá leyendo el libro con su hijo" loading="lazy"></button>
+        <button class="thumb photo" type="button" data-fit="cover" data-src="https://bookinest.com/wp-content/uploads/2026/09/cuento-mama-realista-1024x1024.png"><img src="https://bookinest.com/wp-content/uploads/2026/09/cuento-mama-realista-150x150.png" alt="Mamá leyendo el libro con su hija" loading="lazy"></button>
+        <div class="thumb ph inspo-only">Video hojeándolo</div>
+      </div>
+      <aside class="tip only-d"><span class="k">i</span><div><b>Muy linda la galería</b>Las fotos de mamá leyendo con su peque transmiten el regalo al toque. Renombrá la que se llama "Gemini_Generated_Image…" (ayuda en Google).</div></aside>
+    </div>
+
+    <div class="info">
+      <div class="buy" id="buy">
+        <span class="lbl" id="coverLbl">Elegí la tapa</span>
+        <div class="covers" role="radiogroup" aria-labelledby="coverLbl">
+          <button type="button" class="cv" role="radio" aria-checked="false" data-cover="blanda" data-price="50000">
+            <span class="radio" aria-hidden="true"></span>
+            <b>Tapa blanda</b>
+            <span class="pr">$45.000 <i class="trp">transferencia</i></span><small>$50.000 con otros medios</small>
+          </button>
+          <button type="button" class="cv" role="radio" aria-checked="false" data-cover="dura" data-price="92000">
+            <span class="best">Más elegida</span><span class="radio" aria-hidden="true"></span>
+            <b>Tapa dura</b>
+            <span class="pr">$82.800 <i class="trp">transferencia</i></span><small>$92.000 con otros medios</small>
+          </button>
+        </div>
+        <div class="total" aria-live="polite">
+          <div><span class="big" id="tTr">$82.800</span><span class="tr">10% OFF transferencia</span></div>
+          <span class="ot" id="tOt">$92.000 con otros medios</span>
+        </div>
+        <p class="ebook"><svg class="ic"><use href="#i-mail"/></svg>¿Querés también el eBook? Lo sumás en el paso siguiente.</p>
+        <a class="btn btn-primary btn-block" id="go" href="https://bookinest.com/product/dia-de-la-madre/">Personalizar su cuento <svg class="ic arr"><use href="#i-arr"/></svg></a>
+        <div class="or">o si preferís</div>
+        <a class="btn btn-wa btn-block" id="goWa" target="_blank" rel="noopener" href="https://wa.me/5491131820326"><svg class="ic f"><use href="#i-wa"/></svg>Pedirlo por WhatsApp</a>
+      </div>
+      <aside class="tip"><span class="k">i</span><div><b>Precio por transferencia calculado con tu 10% OFF</b>En el listado aparece $50.000 (la blanda) y la ficha destaca la dura a $92.000: con las dos a la vista no hay sorpresas.</div></aside>
+
+      <div class="facts">
+        <div class="fact"><svg class="ic"><use href="#i-clock"/></svg><div><b>3 a 5 días hábiles de producción</b><span>Cada libro se hace a pedido, especialmente para tu peque.</span></div></div>
+        <div class="fact"><svg class="ic"><use href="#i-truck"/></svg><div><b>Envío a todo el país</b><span>Te lo mandamos a cualquier punto de la Argentina.</span></div></div>
+        <div class="fact"><svg class="ic"><use href="#i-pin"/></svg><div><b>Retiro GRATIS en Belgrano, CABA</b><span>Si te queda cómodo, lo pasás a buscar sin costo.</span></div></div>
+        <div class="fact"><svg class="ic"><use href="#i-tag"/></svg><div><b>20% OFF llevando 2 o más</b><span>Con el código BOOKI. Ideal si son varios hermanos y quieren uno cada uno.</span></div></div>
+      </div>
+      <aside class="tip only-m"><span class="k">i</span><div><b>Muy linda la galería</b>Las fotos de mamá leyendo con su peque transmiten el regalo al toque. Renombrá la que se llama "Gemini_Generated_Image…" (ayuda en Google).</div></aside>
+    </div>
+  </section>
+</main>
+
+<!-- ============ QUÉ SE PERSONALIZA ============ -->
+<section class="section" style="padding-top:20px">
+  <div class="wrap perso">
+    <img src="https://bookinest.com/wp-content/uploads/2025/12/WhatsApp-Video-2025-12-30-at-7.30.48-PM1-300x300.gif" alt="Booki leyendo" width="300" height="300" loading="lazy">
+    <div>
+      <span class="eyebrow">Qué se personaliza</span>
+      <h2 class="h2">Cuatro datos y <em>es suyo</em></h2>
+      <div class="plist four-items">
+        <div class="pi"><svg class="ic"><use href="#i-type"/></svg><b>El nombre de tu peque</b><span>Protagonista de toda la aventura.</span></div>
+        <div class="pi"><svg class="ic"><use href="#i-heart"/></svg><b>El nombre de mamá</b><span>Para que el regalo sea solo suyo.</span></div>
+        <div class="pi"><svg class="ic"><use href="#i-user"/></svg><b>Cómo es tu peque</b><span>Elegís su color de pelo y así lo dibujamos en el libro.</span></div>
+        <div class="pi"><svg class="ic"><use href="#i-pen"/></svg><b>Tu dedicatoria</b><span>Un mensaje especial al inicio del libro.</span></div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA HISTORIA ============ -->
+<section class="section soft">
+  <style>.beats li:nth-child(1) .n{border-color:var(--blue);color:var(--blue)}.beats li:nth-child(2) .n{border-color:var(--orange);color:var(--orange)}.beats li:nth-child(3) .n{border-color:var(--sun);color:var(--sun)}</style>
+  <div class="wrap story">
+    <div>
+      <span class="eyebrow">La historia</span>
+      <p class="big">Tu peque emprende una aventura por <em>la selva, el mar y el espacio</em> para encontrar el regalo perfecto para mamá.</p>
+      <p class="t">Un libro que combina la aventura con la identidad de tu peque, para regalarle a mamá algo que va a atesorar para siempre.</p>
+    </div>
+    <ol class="beats">
+      <li><span class="n">1</span><div><b>Una misión</b><span>Encontrar el regalo perfecto para mamá.</span></div></li>
+      <li><span class="n">2</span><div><b>Una gran aventura</b><span>Por la selva, el mar y el espacio.</span></div></li>
+      <li><span class="n">3</span><div><b>El regalo</b><span>Algo que mamá va a atesorar para siempre.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ POR QUÉ ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Por qué elegir esta historia</span><h2 class="h2">Un regalo para <em>atesorar</em></h2></div>
+    <div class="why">
+      <div class="w"><svg class="ic"><use href="#i-star"/></svg><div><b>Su peque, protagonista</b><span>Con su nombre y su look, en cada escena de la aventura.</span></div></div>
+      <div class="w"><svg class="ic"><use href="#i-heart"/></svg><div><b>Con el nombre de mamá</b><span>El libro es solo para ella.</span></div></div>
+      <div class="w"><svg class="ic"><use href="#i-pen"/></svg><div><b>Tu toque personal</b><span>Una dedicatoria al inicio que lo convierte en un recuerdo.</span></div></div>
+      <div class="w"><svg class="ic"><use href="#i-sparkle"/></svg><div><b>Para siempre</b><span>Un regalo que mamá va a querer guardar toda la vida.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POR DENTRO (inspo) ============ -->
+<section class="section soft inspo-only">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Por dentro</span><h2 class="h2">Así se ve <em>adentro</em></h2>
+      <aside class="tip"><span class="k">i</span><div><b>Completá la descripción de esta ficha</b>En tu web este cuento no tiene descripción larga ni detalles (edad, personalización): solo el texto de arriba. Sumarlos ayuda a decidir y a aparecer en Google.</div></aside>
+    </div>
+    <div class="inside">
+      <div class="slot real"><img src="https://bookinest.com/wp-content/uploads/2026/09/cuento-mama-abierto-600x600.png" alt="Páginas de adentro" loading="lazy"></div>
+      <div class="slot"><svg class="ic"><use href="#i-image"/></svg>La selva</div>
+      <div class="slot"><svg class="ic"><use href="#i-image"/></svg>El mar</div>
+      <div class="slot"><svg class="ic"><use href="#i-image"/></svg>El espacio</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FICHA ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Ficha</span><h2 class="h2">Detalles del <em>libro</em></h2></div>
+    <div class="specs-wrap">
+      <dl class="specs">
+        <div><dt>Tapas</dt><dd>Blanda o dura premium</dd></div>
+        <div><dt>eBook</dt><dd>Opcional</dd></div>
+        <div><dt>Medidas</dt><dd>23 × 23 × 3 cm</dd></div>
+        <div><dt>Peso</dt><dd>0,35 kg</dd></div>
+        <div><dt>Se personaliza con</dt><dd>Nombre del peque, nombre de mamá, color de pelo y dedicatoria</dd></div>
+        <div><dt>Producción</dt><dd>3 a 5 días hábiles</dd></div>
+        <div><dt>Envío</dt><dd>Toda la Argentina o retiro gratis en Belgrano</dd></div>
+      </dl>
+      <div>
+        <aside class="tip warn" style="margin-top:0"><span class="k">!</span><div><b>Categoría, edad y género</b>En tu web aparece en "Sin categoría" y sin edad recomendada. Y el formulario pregunta "Género del peque: Hombre / Mujer": mejor "Nene / Nena", en el tono neutro de la marca.</div></aside>
+        <aside class="tip"><span class="k">i</span><div><b>Más allá de octubre</b>También sirve para el cumpleaños de mamá: conviene mostrarlo todo el año.</div></aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEÑAS ============ -->
+<section class="section soft" id="resenas">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Familias que ya crearon su historia</span><h2 class="h2">"Lloré de <em>emoción</em>"</h2>
+      <aside class="tip warn"><span class="k">!</span><div><b>Estas reseñas son de tu home, no de este cuento</b>Este cuento no tiene sección de valoraciones en tu ficha. Una reseña de una mamá emocionada es oro.</div></aside>
+    </div>
+    <div class="revs">
+      <article class="rv"><div class="st">★★★★★</div><h4>Lloré de emoción</h4><p>Es tan hermoso que cuando lo abrí no pude evitar emocionarme. Muy original, muy especial. De corazón, gracias.</p><div class="who"><b>Luciana P.</b><span class="ver"><svg class="ic"><use href="#i-check"/></svg>Cliente verificado</span></div></article>
+      <article class="rv"><div class="st">★★★★★</div><h4>Tan hermoso que no lo podía creer</h4><p>Me llegó hoy y quedé encantada. Hermoso el libro, hermosa la presentación. Muchas gracias.</p><div class="who"><b>Daniela L.</b><span class="ver"><svg class="ic"><use href="#i-check"/></svg>Cliente verificado</span></div></article>
+      <article class="rv"><div class="st">★★★★★</div><h4>El mejor momento del cumpleaños</h4><p>Se lo dimos en el cumple y se emocionó muchísimo. El cuento es muy lindo y la calidad, espectacular.</p><div class="who"><b>Carolina G.</b><span class="ver"><svg class="ic"><use href="#i-check"/></svg>Cliente verificado</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Preguntas sobre este cuento</span><h2 class="h2">Antes de <em>pedirlo</em></h2></div>
+    <div class="faq">
+      <details open><summary>¿Necesito mandar una foto?</summary><div>No. Elegís su color de pelo y así lo dibujamos. Además completás su nombre, el de mamá y tu dedicatoria.</div></details>
+      <details><summary>¿Sirve solo para el Día de la Madre?</summary><div>No: también es un regalo hermoso para su cumpleaños o cualquier momento especial.</div></details>
+      <details><summary>¿Qué diferencia hay entre el libro y el eBook?</summary><div>El libro es impreso. El eBook es una versión digital en alta definición, con entrega inmediata tras la creación; lo podés sumar en el paso siguiente.</div></details>
+      <details><summary>¿Puedo ver cómo queda antes de comprarlo?</summary><div>Sí. Cuando terminás de personalizarlo, ves una vista previa antes de agregarlo al carrito.</div></details>
+      <details><summary>¿Cuánto tarda?</summary><div>La producción lleva entre <b>3 y 5 días hábiles</b>, más el envío según tu localidad. También podés retirarlo gratis en Belgrano, CABA.</div></details>
+      <details><summary>¿Cómo puedo pagar?</summary><div>Con Mercado Pago o por transferencia bancaria, con <b>10% OFF</b>.</div></details>
+      <details><summary>¿Hay cambios o devoluciones?</summary><div>Al ser un producto personalizado y único, no. Si llega con un defecto de fabricación o una falla técnica, lo cambiamos.</div></details>
+    </div>
+    <a class="helpline" data-wa="¡Hola! Tengo una pregunta sobre el cuento Día de la madre." target="_blank" rel="noopener" href="https://wa.me/5491131820326"><svg class="ic f"><use href="#i-wa"/></svg><span>¿Otra duda? Escribinos por WhatsApp y te responde una persona.</span></a>
+  </div>
+</section>
+
+<!-- ============ RELACIONADOS ============ -->
+<section class="section soft">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Sumá otro y ahorrá</span><h2 class="h2">También te puede <em>gustar</em></h2></div>
+    <div class="rel">
+      <a class="rb" href="producto-mejor-papa.html"><div class="im"><img src="https://bookinest.com/wp-content/uploads/2026/05/Cuento-dia-del-padre-02-273x300.png" alt="Cuento El mejor papá del mundo" loading="lazy"></div><h3>El mejor papá del mundo</h3><p><b>$41.400</b> transf.</p></a>
+      <a class="rb" href="producto-cumpleanos.html"><div class="im"><img src="https://bookinest.com/wp-content/uploads/2026/02/feliz-cumple_Mesa-de-trabajo-1-03-300x300.png" alt="Cuento ¡Feliz cumpleaños!" loading="lazy"></div><h3>¡Feliz cumpleaños!</h3><p><b>$49.500</b> transf.</p></a>
+      <a class="rb" href="producto-buenas-noches.html"><div class="im"><img src="https://bookinest.com/wp-content/uploads/2026/08/cuento-buenas-noches-2-300x300.png" alt="Cuento Buenas noches" loading="lazy"></div><h3>Buenas noches</h3><p><b>$45.000</b> transf.</p></a>
+    </div>
+    <p class="combo"><svg class="ic" style="color:var(--orange)"><use href="#i-tag"/></svg>Uno para mamá y otro para tu peque: llevando 2 o más tenés <b>20% OFF</b> con el código BOOKI</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap in">
+    <a href="landing.html" class="logo"><img src="https://bookinest.com/wp-content/uploads/2026/09/cropped-Untitled-1-1-150x150.png" alt="">bookinest</a>
+    <nav><a href="landing.html#cuentos">Cuentos</a><a href="landing.html#faq">Ayuda</a><a href="https://www.instagram.com/mybookinest/" target="_blank" rel="noopener">Instagram</a><a data-wa="¡Hola Bookinest! Tengo una consulta." target="_blank" rel="noopener" href="https://wa.me/5491131820326">WhatsApp</a></nav>
+  </div>
+</footer>
+
+<!-- Barra de compra fija (celular) -->
+<div class="buybar" id="buybar" data-mode="pick">
+  <div class="bp">
+    <span class="m-pick"><small>Desde</small><b>$45.000</b><small>por transferencia</small></span>
+    <span class="m-go"><b id="bbP">$82.800</b><small id="bbS">Tapa dura · con transferencia</small></span>
+  </div>
+  <a class="wa-mini" id="bbWa" target="_blank" rel="noopener" href="https://wa.me/5491131820326" aria-label="Pedirlo por WhatsApp"><svg class="ic f"><use href="#i-wa"/></svg></a>
+  <a class="btn btn-primary m-pick" id="bbPick" href="#buy">Comprar <svg class="ic"><use href="#i-down"/></svg></a>
+  <a class="btn btn-primary m-go" id="bbGo" href="https://bookinest.com/product/dia-de-la-madre/">Personalizar <svg class="ic arr"><use href="#i-arr"/></svg></a>
+</div>
+
+<button class="fab" type="button" id="fab" aria-haspopup="dialog" aria-controls="waSheet"><span class="bub"><svg class="ic f"><use href="#i-wa"/></svg></span>¿Dudas? Escribinos</button>
+<div class="wa-sheet" id="waSheet" role="dialog" aria-label="Ayuda por WhatsApp" aria-hidden="true">
+  <div class="top"><h3>¿En qué te ayudamos?</h3><button class="x" type="button" id="waX" aria-label="Cerrar">×</button></div>
+  <p class="hint">Tocá una opción y se abre WhatsApp con el mensaje ya escrito. Te responde una persona.</p>
+  <div id="waQs"></div>
+  <p class="alt">O llamanos al <a href="tel:+5491131820326">11 3182-0326</a></p>
+</div>
+<button class="notes-btn" type="button" id="notes" aria-pressed="true"><span class="sw"></span><span class="lbl">Notas</span></button>
+<div class="toast" id="toast" role="status">Código BOOKI copiado</div>
+<div class="dmodal" id="dmodal" role="dialog" aria-modal="true" aria-labelledby="dT" aria-hidden="true">
+  <div class="dcard">
+    <h3 id="dT">💌 La dedicatoria para mamá</h3>
+    <p>Escribila y mirá cómo queda en la primera página.</p>
+    <div class="dfields">
+      <label>Nombre de mamá<input id="dMama" maxlength="16" placeholder="Por ejemplo, Laura"></label>
+      <label>Nombre de tu peque<input id="dPeque" maxlength="16" placeholder="Por ejemplo, Luca"></label>
+    </div>
+    <label class="dmsg">Tu mensaje<textarea id="dMsg" maxlength="180" placeholder="Gracias por cada abrazo y cada cuento antes de dormir."></textarea></label>
+    <div class="dpage" aria-live="polite"><div class="to" id="pTo">Para mamá</div><div class="msg" id="pMsg">Gracias por cada abrazo y cada cuento antes de dormir.</div><div class="from" id="pFrom">Con amor, tu peque 💛</div></div>
+    <a class="btn btn-primary btn-block" href="#buy" id="dGo">Elegí la tapa <svg class="ic"><use href="#i-down"/></svg></a>
+    <button class="x" type="button" id="dX">Cerrar</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var WA = '5491131820326', BOOK = 'Día de la madre', URL_P = 'https://bookinest.com/product/dia-de-la-madre/';
+  function waLink(t){ return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t); }
+  function money(n){ return '$' + Math.round(n).toLocaleString('es-AR'); }
+  document.querySelectorAll('[data-wa]').forEach(function(a){ a.href = waLink(a.dataset.wa); });
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
+    if (a && typeof window.fbq === 'function') window.fbq('track', 'Contact');
+  });
+
+  // Código
+  var toast = document.getElementById('toast');
+  document.getElementById('copyCode').addEventListener('click', function(){
+    var done = function(){ toast.classList.add('show'); setTimeout(function(){ toast.classList.remove('show'); }, 1800); };
+    try { navigator.clipboard.writeText('BOOKI').then(done, done); } catch(e){ done(); }
+  });
+
+  // Galería
+  var main = document.getElementById('mainImg'), thumbs = [].slice.call(document.querySelectorAll('.thumb[data-src]'));
+  thumbs.forEach(function(t){ t.addEventListener('click', function(){
+    thumbs.forEach(function(x){ x.setAttribute('aria-current', x === t); });
+    main.style.opacity = 0; setTimeout(function(){ main.src = t.dataset.src; main.classList.toggle('fill', t.dataset.fit === 'cover'); main.style.opacity = 1; }, 180);
+  }); });
+
+  // Tapa
+  var state = { cover:'dura', price:92000 };
+  var cvs = [].slice.call(document.querySelectorAll('.cv'));
+  function render(){
+    var tr = state.price * 0.9, label = state.cover === 'dura' ? 'Tapa dura' : 'Tapa blanda';
+    document.getElementById('tTr').textContent = money(tr);
+    document.getElementById('tOt').textContent = money(state.price) + ' con otros medios';
+    document.getElementById('bbP').textContent = money(tr);
+    document.getElementById('bbS').textContent = label + ' · con transferencia';
+    var u = new URL(URL_P); u.searchParams.set('tapa', state.cover); if (state.name) u.searchParams.set('nombre', state.name);
+    document.getElementById('go').href = u.toString(); document.getElementById('bbGo').href = u.toString();
+    var msg = '¡Hola! Quiero pedir el cuento "' + BOOK + '" en ' + label.toLowerCase() + '. ¿Me ayudan?';
+    document.getElementById('goWa').href = waLink(msg); document.getElementById('bbWa').href = waLink(msg);
+  }
+  function pick(c){ cvs.forEach(function(x){ x.setAttribute('aria-checked', x === c); x.tabIndex = x === c ? 0 : -1; }); state.cover = c.dataset.cover; state.price = +c.dataset.price; render(); }
+  cvs.forEach(function(c, i){
+    c.addEventListener('click', function(){ pick(c); });
+    c.addEventListener('keydown', function(e){
+      var d = (e.key === 'ArrowRight' || e.key === 'ArrowDown') ? 1 : (e.key === 'ArrowLeft' || e.key === 'ArrowUp') ? -1 : 0;
+      if (d){ e.preventDefault(); var n = cvs[(i + d + cvs.length) % cvs.length]; pick(n); n.focus(); }
+    });
+  });
+  pick(cvs[1]);
+
+  // Barra fija (celular): antes del bloque de compra lleva a elegir la tapa; después, a personalizar
+  var bar = document.getElementById('buybar'), buy = document.getElementById('buy');
+  function setBar(visible, mode){ bar.classList.toggle('show', visible); if (mode) bar.dataset.mode = mode; }
+  setBar(true, 'pick');
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      var e = es[0];
+      if (e.isIntersecting) setBar(false);
+      else setBar(true, e.boundingClientRect.top < 0 ? 'go' : 'pick');
+    }, {threshold: .35}).observe(buy);
+  }
+  function toBuy(e){
+    e.preventDefault();
+    buy.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
+    buy.classList.remove('flash'); void buy.offsetWidth; buy.classList.add('flash');
+    setTimeout(function(){ var c = buy.querySelector('.cv[aria-checked="true"]'); if (c) c.focus({preventScroll:true}); }, 600);
+  }
+  document.getElementById('bbPick').addEventListener('click', toBuy);
+  document.querySelector('.from').addEventListener('click', toBuy);
+
+  // WhatsApp ayuda
+  var sheet = document.getElementById('waSheet'), fab = document.getElementById('fab');
+  function waQs(){
+    var label = state.cover === 'dura' ? 'tapa dura' : 'tapa blanda';
+    var qs = [
+      ['Quiero pedir este cuento en ' + label, '¡Hola! Quiero pedir el cuento "' + BOOK + '" en ' + label + '. ¿Me ayudan?'],
+      ['¿Llega a tiempo para una fecha?', '¡Hola! Quiero el cuento "' + BOOK + '" para una fecha especial. ¿Llega a tiempo si lo pido hoy?'],
+      ['¿Qué diferencia hay entre las tapas?', '¡Hola! ¿Qué diferencia hay entre la tapa blanda y la dura del cuento "' + BOOK + '"?'],
+      ['Tengo otra pregunta', '¡Hola! Tengo una pregunta sobre el cuento "' + BOOK + '".']
+    ];
+    document.getElementById('waQs').innerHTML = qs.map(function(q){ return '<a class="wa-q" target="_blank" rel="noopener" href="' + waLink(q[1]) + '"><svg class="ic f"><use href="#i-wa"/></svg>' + q[0] + '</a>'; }).join('');
+  }
+  function openSheet(o){ if (o) waQs(); sheet.classList.toggle('open', o); sheet.setAttribute('aria-hidden', !o); fab.setAttribute('aria-expanded', o); }
+  fab.addEventListener('click', function(){ openSheet(!sheet.classList.contains('open')); });
+  document.getElementById('waX').addEventListener('click', function(){ openSheet(false); fab.focus(); });
+  addEventListener('keydown', function(e){ if (e.key === 'Escape') openSheet(false); });
+
+
+
+  // ===== Tema Mamá: vista previa de la dedicatoria =====
+  var dm = document.getElementById('dmodal');
+  function openDed(o){ dm.classList.toggle('open', o); dm.setAttribute('aria-hidden', !o); if (o) setTimeout(function(){ document.getElementById('dMama').focus(); }, 80); }
+  function cap(v){ v = v.trim(); return v ? v.charAt(0).toLocaleUpperCase('es-AR') + v.slice(1) : ''; }
+  function paint(){
+    var m = cap(document.getElementById('dMama').value), p = cap(document.getElementById('dPeque').value), t = document.getElementById('dMsg').value.trim();
+    document.getElementById('pTo').textContent = m ? 'Para ' + m : 'Para mamá';
+    document.getElementById('pMsg').textContent = t || 'Gracias por cada abrazo y cada cuento antes de dormir.';
+    document.getElementById('pFrom').textContent = 'Con amor, ' + (p || 'tu peque') + ' 💛';
+    state.name = p; render();
+  }
+  ['dMama','dPeque','dMsg'].forEach(function(id){ document.getElementById(id).addEventListener('input', paint); });
+  document.getElementById('dedBtn').addEventListener('click', function(){ openDed(true); if (typeof window.fbq === 'function') window.fbq('trackCustom', 'DedicatoriaMama'); });
+  document.getElementById('dX').addEventListener('click', function(){ openDed(false); });
+  dm.addEventListener('click', function(e){ if (e.target === dm) openDed(false); });
+  addEventListener('keydown', function(e){ if (e.key === 'Escape') openDed(false); });
+  document.getElementById('dGo').addEventListener('click', function(e){ openDed(false); toBuy(e); });
+
+  // Notas
+  var nb = document.getElementById('notes');
+  function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch(e){ return null; } }
+  function setClean(c){ document.body.classList.toggle('clean', c); nb.setAttribute('aria-pressed', !c); store('bk_clean', c ? '1' : '0'); }
+  setClean(store('bk_clean') === '1');
+  nb.addEventListener('click', function(){ setClean(!document.body.classList.contains('clean')); });
+})();
+</script>
+</body>
+</html>
