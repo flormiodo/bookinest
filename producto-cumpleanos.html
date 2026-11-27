@@ -324,40 +324,14 @@ body.clean .sw::after{left:3px}
 }
 
 /* ===== Tema Cumpleaños ===== */
-.parade-btn{display:inline-flex;align-items:center;gap:8px;border:2px solid #CF8A94;background:#FFF1F3;color:#8E3B48;border-radius:999px;padding:7px 16px;font-family:'Fredoka',sans-serif;font-weight:500;font-size:.95rem;cursor:pointer;transition:background .15s,transform .15s}
-.parade-btn:hover{background:#FFE4E8;transform:translateY(-1px)}
 #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
 .fx-btn{position:fixed;left:18px;bottom:72px;z-index:70;border:none;cursor:pointer;background:#fff;color:var(--ink);border-radius:999px;padding:8px 14px;font-family:'Fredoka',sans-serif;font-weight:500;box-shadow:0 10px 24px rgba(0,0,0,.15);display:flex;align-items:center;gap:6px}
-.pmodal{position:fixed;inset:0;z-index:120;display:grid;place-items:center;background:rgba(29,43,68,.45);padding:16px;opacity:0;pointer-events:none;transition:opacity .25s}
-.pmodal.open{opacity:1;pointer-events:auto}
-.pcard{background:#fff;border-radius:30px;max-width:520px;width:100%;padding:28px 24px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.3);transform:scale(.94);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
-.pmodal.open .pcard{transform:none}
-.pcard h3{font-size:1.7rem;margin-bottom:6px}
-.pcard p{color:var(--ink-2)}
-.pform{display:flex;gap:10px;margin-top:18px}
-.pform input{flex:1;min-width:0;padding:14px 18px;border-radius:999px;border:2px solid var(--line);background:var(--soft);font-size:1.1rem;font-weight:500;outline:none}
-.pform input:focus{border-color:var(--blue);background:#fff}
-.pform .btn{min-height:52px;padding:10px 18px;font-size:1rem}
-.pstage{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;min-height:0;margin:20px 0 6px}
-.pl{display:flex;flex-direction:column;align-items:center;gap:2px;opacity:0;transform:translateY(-40px) rotate(-12deg)}
-.pl.in{animation:drop .6s cubic-bezier(.2,1.4,.4,1) forwards}
-@keyframes drop{to{opacity:1;transform:none}}
-.pl .an{font-size:1.5rem;line-height:1}
-.pl b{width:44px;height:52px;border-radius:12px;display:grid;place-items:center;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.7rem;color:#fff;box-shadow:0 6px 0 rgba(0,0,0,.12)}
-.presult{display:none;margin-top:14px}
-.presult.show{display:block;animation:fadeup .5s ease}
 @keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.presult h4{font-family:'Fredoka',sans-serif;font-size:1.5rem;color:#C0546A;margin-bottom:14px}
-.pcard .x{margin-top:10px;border:none;background:none;color:var(--ink-2);text-decoration:underline;cursor:pointer}
 @media (max-width:640px){
   .fx-btn{left:12px;bottom:136px;padding:7px 11px}
   .fx-btn .lbl{display:none}
-  .pform{flex-direction:column}
-  .pl b{width:36px;height:44px;font-size:1.4rem}
-  .pl .an{font-size:1.2rem}
-  .parade-btn{font-size:.88rem;padding:6px 12px}
 }
-@media (prefers-reduced-motion:reduce){#confetti,.fx-btn{display:none}.pl{opacity:1;transform:none}.pl.in{animation:none}}
+@media (prefers-reduced-motion:reduce){#confetti,.fx-btn{display:none}}
 </style>
 </head>
 <body>
@@ -407,7 +381,6 @@ body.clean .sw::after{left:3px}
       <h1>¡Feliz cumpleaños!</h1>
       <p class="hook">¿Qué pasaría si <b>las letras de su nombre cobraran vida</b> en el día de su cumpleaños?</p>
       <div class="from-row">
-        <button class="parade-btn" type="button" id="paradeBtn">🎉 Probá el desfile de su nombre</button>
         <a class="from" href="#buy">Desde <b>$49.500</b> por transferencia</a>
       </div>
     </div>
@@ -541,7 +514,6 @@ body.clean .sw::after{left:3px}
       </dl>
       <div>
         <aside class="tip warn" style="margin-top:0"><span class="k">!</span><div><b>Unificá la edad y el formato</b>En tu ficha actual, los detalles dicen "Recomendado de 0 a 6 años" pero las etiquetas dicen 0–3, 3–6 y 6–9, y el FAQ dice 0 a 8. Y "Formato: Tapa dura premium o Ebook", cuando también vendés tapa blanda. Acá usé "0 a 6"; confirmá cuál va.</div></aside>
-        <aside class="tip"><span class="k">i</span><div><b>El juego del desfile</b>Quien escribe el nombre de su peque ve las letras llegar una por una, como en el libro. El nombre viaja al formulario con <code>?nombre=</code> (necesita un snippet chico en WooCommerce para precargarlo).</div></aside>
         <aside class="tip"><span class="k">i</span><div><b>Contá la diferencia entre las tapas</b>Si la dura es "la más elegida", decí por qué: más resistente, mejor para regalar, papel distinto… Con una línea alcanza para justificar la diferencia de precio.</div></aside>
       </div>
     </div>
@@ -620,16 +592,6 @@ body.clean .sw::after{left:3px}
 <div class="toast" id="toast" role="status">Código BOOKI copiado</div>
 <canvas id="confetti" aria-hidden="true"></canvas>
 <button class="fx-btn" type="button" id="fxBtn" aria-pressed="true">🎊 <span class="lbl" id="fxLbl">Sacar confeti</span></button>
-<div class="pmodal" id="pmodal" role="dialog" aria-modal="true" aria-labelledby="pT" aria-hidden="true">
-  <div class="pcard">
-    <h3 id="pT">🎉 El desfile de su nombre</h3>
-    <p>En el libro, cada letra la trae un personaje distinto. Escribí su nombre y mirá.</p>
-    <form class="pform" id="pform" autocomplete="off"><input id="pname" maxlength="12" placeholder="Su nombre" aria-label="Nombre de tu peque"><button class="btn btn-primary" type="submit">¡Que empiece!</button></form>
-    <div class="pstage" id="pstage" aria-live="polite"></div>
-    <div class="presult" id="presult"><h4 id="pmsg"></h4><a class="btn btn-primary btn-block" href="#buy" id="pgo">Elegí la tapa <svg class="ic"><use href="#i-down"/></svg></a></div>
-    <button class="x" type="button" id="px">Cerrar</button>
-  </div>
-</div>
 
 <script>
 (function(){
@@ -745,31 +707,6 @@ body.clean .sw::after{left:3px}
   document.addEventListener('visibilitychange', function(){ if (document.hidden && craf){ cancelAnimationFrame(craf); craf = null; } else if (!document.hidden && (fxOn || bits.length)) crun(); });
   function burst(){ if (rM) return; for (var i = 0; i < 120; i++) bits.push(bit(true, true)); crun(); }
 
-  // Desfile de su nombre
-  var pm = document.getElementById('pmodal'), pin = document.getElementById('pname'), stage = document.getElementById('pstage'), pres = document.getElementById('presult');
-  var ANIMALS = ['🐒','🐄','🐨','🦒','🐘','🦁','🐧','🐰','🦊','🐻','🐢','🦜'];
-  function openP(o){ pm.classList.toggle('open', o); pm.setAttribute('aria-hidden', !o); if (o) setTimeout(function(){ pin.focus(); }, 80); }
-  document.getElementById('paradeBtn').addEventListener('click', function(){ openP(true); });
-  document.getElementById('px').addEventListener('click', function(){ openP(false); });
-  pm.addEventListener('click', function(e){ if (e.target === pm) openP(false); });
-  addEventListener('keydown', function(e){ if (e.key === 'Escape') openP(false); });
-  document.getElementById('pform').addEventListener('submit', function(e){
-    e.preventDefault();
-    var n = pin.value.trim(); if (!n){ pin.focus(); return; }
-    var letters = Array.from(n.toLocaleUpperCase('es-AR')).filter(function(ch){ return ch.trim(); }).slice(0, 12);
-    stage.innerHTML = letters.map(function(ch, i){ return '<span class="pl"><span class="an" aria-hidden="true">' + ANIMALS[i % ANIMALS.length] + '</span><b style="background:' + COLS[i % COLS.length] + '">' + ch.replace(/[<>&]/g, '') + '</b></span>'; }).join('');
-    pres.classList.remove('show');
-    var els = stage.querySelectorAll('.pl'), step = rM ? 0 : 280;
-    els.forEach(function(el, i){ setTimeout(function(){ el.classList.add('in'); }, i * step); });
-    setTimeout(function(){
-      var pretty = n.charAt(0).toLocaleUpperCase('es-AR') + n.slice(1);
-      document.getElementById('pmsg').textContent = '¡Feliz cumpleaños, ' + pretty + '! 🎂';
-      pres.classList.add('show'); burst();
-      state.name = pretty; render();
-      if (typeof window.fbq === 'function') window.fbq('trackCustom', 'DesfileNombre');
-    }, els.length * step + 300);
-  });
-  document.getElementById('pgo').addEventListener('click', function(e){ openP(false); toBuy(e); });
 
   // Notas
   var nb = document.getElementById('notes');
