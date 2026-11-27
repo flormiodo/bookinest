@@ -367,6 +367,7 @@ body.clean .sw::after{left:3px}
 .prize-card p{color:var(--ink-2)}
 .prize-code{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 0;border:2px dashed var(--xgreen);border-radius:16px;padding:10px 14px;background:#F1FAF4}
 .prize-code b{font-family:'Fredoka',sans-serif;font-size:1.5rem;letter-spacing:.1em;color:var(--xgreen)}
+.prize-how{font-size:.88rem;margin:-8px 0 16px}
 .prize-code button{border:none;background:var(--xgreen);color:#fff;border-radius:999px;padding:8px 14px;font-weight:600;cursor:pointer}
 .prize-card .x{margin-top:6px;border:none;background:none;color:var(--ink-2);text-decoration:underline;cursor:pointer}
 @media (max-width:640px){
@@ -572,7 +573,7 @@ body.clean .sw::after{left:3px}
       </div>
       <div>
         <aside class="tip warn" style="margin-top:0"><span class="k">!</span><div><b>Edad y categorías</b>El FAQ de la ficha dice 1 a 8 años, pero las etiquetas dicen 0–3, 3–6 y 6–9, y además aparece "Sin categoría". Usé "1 a 8"; sacá "Sin categoría" y sumá "Navidad".</div></aside>
-        <aside class="tip"><span class="k">i</span><div><b>El juego de "encontrá a Booki"</b>Booki se esconde en esta página y quien lo encuentra se lleva un premio. Hoy el premio es tu código BOOKI; si creás un cupón exclusivo (por ejemplo NAVIDADBOOKI), vas a poder medir cuántas personas jugaron y compraron.</div></aside>
+        <aside class="tip"><span class="k">i</span><div><b>Creá el cupón NAVIDAD en WooCommerce</b>El premio del juego es "20% OFF en este cuento con el código NAVIDAD". Para que funcione, creá ese cupón: 20% de descuento, limitado a "¿Dónde estás? Edición Navidad", con vencimiento el 25/12. Como es un código propio del juego, vas a saber cuántas ventas salieron de encontrar a Booki.</div></aside>
       </div>
     </div>
   </div>
@@ -654,8 +655,9 @@ body.clean .sw::after{left:3px}
   <div class="prize-card">
     <span class="hatwrap"><img src="https://bookinest.com/wp-content/uploads/2026/09/cropped-Untitled-1-1-150x150.png" alt=""><svg class="hat" viewBox="0 0 60 46" aria-hidden="true"><use href="#santa-hat"/></svg></span>
     <h3 id="prizeT">¡Me encontraste!</h3>
-    <p>Sos mejor que Papá Noel buscando 🎅. Tu premio: <b>20% OFF</b> llevando 2 o más cuentos.</p>
-    <div class="prize-code"><b>BOOKI</b><button type="button" id="prizeCopy">Copiar código</button></div>
+    <p>Sos mejor que Papá Noel buscando 🎅. Tu premio: <b>20% OFF en este cuento</b> con el código:</p>
+    <div class="prize-code"><b>NAVIDAD</b><button type="button" id="prizeCopy">Copiar código</button></div>
+    <p class="prize-how">Pegalo en el carrito antes de pagar.</p>
     <a class="btn btn-primary btn-block" href="#buy" id="prizeGo">Elegir la tapa</a>
     <button class="x" type="button" id="prizeX">Seguir mirando</button>
   </div>
@@ -814,7 +816,7 @@ body.clean .sw::after{left:3px}
   prize.addEventListener('click', function(e){ if (e.target === prize) openPrize(false); });
   addEventListener('keydown', function(e){ if (e.key === 'Escape') openPrize(false); });
   document.getElementById('prizeCopy').addEventListener('click', function(){
-    var b = this; try { navigator.clipboard.writeText('BOOKI').then(function(){ b.textContent = '¡Copiado!'; }, function(){ b.textContent = 'BOOKI'; }); } catch(e){ b.textContent = 'BOOKI'; }
+    var b = this; try { navigator.clipboard.writeText('NAVIDAD').then(function(){ b.textContent = '¡Copiado!'; }, function(){ b.textContent = 'NAVIDAD'; }); } catch(e){ b.textContent = 'NAVIDAD'; }
   });
   document.getElementById('prizeGo').addEventListener('click', function(e){ openPrize(false); toBuy(e); });
 
