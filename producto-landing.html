@@ -118,7 +118,8 @@ body.clean .tip,body.clean .inspo-only{display:none!important}
 .cv[aria-checked="true"] .radio{border-color:var(--blue);background:radial-gradient(circle,var(--blue) 0 45%,#fff 48%)}
 .cv b{display:block;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.2rem;padding-right:30px}
 .cv .pr{display:block;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.45rem;margin-top:8px;line-height:1.1}
-.cv small{display:block;color:var(--ink-2);font-size:.85rem}
+.cv small{display:block;color:var(--ink-2);font-size:.85rem;margin-top:4px}
+.cv .trp{display:inline-block;font-style:normal;font-family:'Roboto',sans-serif;font-weight:500;font-size:.72rem;letter-spacing:.02em;color:var(--ok);background:#EAF7EF;border-radius:999px;padding:3px 8px;vertical-align:4px;margin-left:2px}
 .cv .best{position:absolute;top:-12px;left:14px;background:var(--orange);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.76rem;padding:3px 10px;border-radius:999px}
 .total{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:20px 0 16px;padding-top:18px;border-top:1.5px dashed var(--line)}
 .total .big{font-family:'Fredoka',sans-serif;font-weight:600;font-size:2.3rem;line-height:1}
@@ -304,8 +305,10 @@ body.clean .sw::after{left:3px}
   .buy{padding:18px;border-radius:24px}
   .covers{gap:10px}
   .cv{padding:14px 12px 12px}
-  .cv b{font-size:1.08rem}
+  .cv b{font-size:1rem;padding-right:26px;white-space:nowrap}
+  .cv .radio{right:10px;top:14px;width:22px;height:22px}
   .cv .pr{font-size:1.25rem}
+  .cv .trp{display:table;margin:4px 0 0;vertical-align:0}
   .total .big{font-size:2rem}
   .rel{grid-template-columns:1fr 1fr 1fr;gap:10px}
   .rb{padding:6px 6px 10px;border-radius:18px}
@@ -393,12 +396,12 @@ body.clean .sw::after{left:3px}
           <button type="button" class="cv" role="radio" aria-checked="false" data-cover="blanda" data-price="55000">
             <span class="radio" aria-hidden="true"></span>
             <b>Tapa blanda</b>
-            <span class="pr">$49.500</span><small>con transferencia · $55.000</small>
+            <span class="pr">$49.500 <i class="trp">transferencia</i></span><small>$55.000 con otros medios</small>
           </button>
           <button type="button" class="cv" role="radio" aria-checked="true" data-cover="dura" data-price="92000">
             <span class="best">Más elegida</span><span class="radio" aria-hidden="true"></span>
             <b>Tapa dura</b>
-            <span class="pr">$82.800</span><small>con transferencia · $92.000</small>
+            <span class="pr">$82.800 <i class="trp">transferencia</i></span><small>$92.000 con otros medios</small>
           </button>
         </div>
         <div class="total" aria-live="polite">
