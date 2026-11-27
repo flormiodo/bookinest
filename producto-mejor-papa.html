@@ -333,20 +333,6 @@ body.clean .sw::after{left:3px}
 .slot.real{padding:0;border:none;overflow:hidden;background:#fff}
 .slot.real img{width:100%;height:100%;object-fit:cover}
 @media (max-width:640px){.plist.two-items,.plist.four-items{grid-template-columns:1fr}}
-.gag{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--gc);background:var(--gb);color:var(--gt);border-radius:999px;padding:7px 16px;font-family:'Fredoka',sans-serif;font-weight:500;font-size:.95rem;cursor:pointer;transition:background .15s,transform .15s}
-.gag:hover{transform:translateY(-1px)}
-.gag .ic{width:18px;height:18px}
-@media (max-width:640px){.gag{font-size:.88rem;padding:6px 12px}}
-.power{display:none;margin-top:12px;padding:12px 16px;border-radius:16px;background:#FFF1EA;border:1.5px solid #F2C6AE;color:#7A3519;font-family:'Fredoka',sans-serif;font-weight:500;font-size:1.05rem;line-height:1.35}
-.power.show{display:block;animation:pop .45s cubic-bezier(.2,1.4,.4,1)}
-.power small{display:block;font-family:'Roboto',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#C0603A;margin-bottom:2px}
-@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
-.flyer{position:fixed;z-index:110;left:-140px;top:30%;width:110px;pointer-events:none;display:none}
-.flyer.go{display:block;animation:fly 1.6s cubic-bezier(.45,.05,.55,.95) forwards}
-.flyer img{width:64px;height:64px;position:relative;z-index:2;margin-left:40px}
-.flyer svg{position:absolute;left:0;top:18px;width:70px;height:46px;z-index:1}
-@keyframes fly{0%{transform:translate(0,40px) rotate(8deg)}50%{transform:translate(55vw,-40px) rotate(-4deg)}100%{transform:translate(calc(100vw + 160px),-10px) rotate(6deg)}}
-@media (prefers-reduced-motion:reduce){.flyer{display:none!important}}
 </style>
 </head>
 <body>
@@ -401,10 +387,10 @@ body.clean .sw::after{left:3px}
       <h1>El mejor papá del mundo</h1>
       <p class="hook">¿Y si el regalo para papá fuera un libro donde <b>él es el superhéroe?</b></p>
       <div class="from-row">
-        <button class="gag" type="button" id="powerBtn" style="--gc:#C0603A;--gb:#FFF1EA;--gt:#8A3E20">🦸 Descubrí sus superpoderes</button>
+        
         <a class="from" href="#buy">Desde <b>$41.400</b> por transferencia</a>
       </div>
-      <p class="power" id="power" aria-live="polite"></p>
+      
     </div>
     <div class="gallery">
       <div class="main-img">
@@ -616,7 +602,6 @@ body.clean .sw::after{left:3px}
 </div>
 <button class="notes-btn" type="button" id="notes" aria-pressed="true"><span class="sw"></span><span class="lbl">Notas</span></button>
 <div class="toast" id="toast" role="status">Código BOOKI copiado</div>
-<div class="flyer" id="flyer" aria-hidden="true"><svg viewBox="0 0 70 46"><path d="M68 6C50 2 30 4 14 14 6 20 2 30 0 44c14-8 28-10 40-8 10 2 20-2 28-12z" fill="#D9402F"/><path d="M68 6c-10 8-22 14-38 16" fill="none" stroke="#A82A1E" stroke-width="2"/></svg><img src="https://bookinest.com/wp-content/uploads/2026/09/cropped-Untitled-1-1-150x150.png" alt=""></div>
 
 <script>
 (function(){
@@ -704,19 +689,6 @@ body.clean .sw::after{left:3px}
   document.getElementById('waX').addEventListener('click', function(){ openSheet(false); fab.focus(); });
   addEventListener('keydown', function(e){ if (e.key === 'Escape') openSheet(false); });
 
-
-
-  // ===== Tema Papá: superpoderes =====
-  var POW = ['Brazos que abrazan fuerte y hacen desaparecer los miedos.', 'Una voz que calma tormentas.', 'Manos que arreglan cosas rotas y preparan la comida más rica.', 'La paciencia infinita de alguien que siempre vuelve a empezar.', 'El superpoder secreto: no se ve con los ojos. Se siente en el corazón. ❤️'];
-  var pi = 0, powEl = document.getElementById('power'), fl = document.getElementById('flyer'), pb = document.getElementById('powerBtn');
-  pb.addEventListener('click', function(){
-    var n = pi % POW.length;
-    powEl.innerHTML = '<small>Superpoder ' + (n + 1) + ' de ' + POW.length + '</small>' + POW[n];
-    powEl.classList.remove('show'); void powEl.offsetWidth; powEl.classList.add('show');
-    fl.classList.remove('go'); void fl.offsetWidth; fl.classList.add('go');
-    pi++; pb.textContent = pi % POW.length === 0 ? '🦸 Ver de nuevo' : '🦸 Otro superpoder';
-    if (typeof window.fbq === 'function' && pi === 1) window.fbq('trackCustom', 'Superpoderes');
-  });
 
   // Notas
   var nb = document.getElementById('notes');

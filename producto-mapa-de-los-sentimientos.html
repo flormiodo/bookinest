@@ -709,12 +709,19 @@ body.clean .sw::after{left:3px}
 
 
   // ===== Tema Mapa: ¿cómo se siente hoy? =====
+  var FEEL = {
+    'Alegría': '¡Qué lindo! La alegría se disfruta más cuando se comparte. ¿Qué fue lo mejor de su día?',
+    'Tristeza': 'Está bien estar triste. A veces lo que más ayuda es un abrazo largo y alguien que escuche.',
+    'Enojo': 'Enojarse también es parte de sentir. Respirar hondo tres veces, juntos, ayuda a que el enojo se achique.',
+    'Miedo': 'Hasta los más valientes sienten miedo. Ser valiente es animarse, aunque dé un poquito de miedo.',
+    'Calma': '¡Qué buen momento para leer juntos! La calma es el mejor lugar para empezar una aventura.'
+  };
   var feelBtn = document.getElementById('feelBtn'), feel = document.getElementById('feel'), fm = document.getElementById('feelMsg');
   feelBtn.addEventListener('click', function(){ feel.hidden = !feel.hidden; feelBtn.setAttribute('aria-expanded', !feel.hidden); });
   feel.querySelectorAll('button').forEach(function(b){
     b.addEventListener('click', function(){
       feel.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
-      fm.innerHTML = '<b>' + b.dataset.e + '</b>: también vale 💛 Todas las emociones son importantes y necesarias. En este cuento, tu peque lo descubre en una misión por el Bosque Encantado.';
+      fm.textContent = FEEL[b.dataset.e];
       if (typeof window.fbq === 'function') window.fbq('trackCustom', 'ComoSeSiente');
     });
   });

@@ -353,8 +353,10 @@ body.clean .sw::after{left:3px}
 .prize-card p{color:var(--ink-2)}
 .prize-code{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 0;border:2px dashed #2E7FA8;border-radius:16px;padding:10px 14px;background:#EAF5FB}
 .prize-code b{font-family:'Fredoka',sans-serif;font-size:1.5rem;letter-spacing:.1em;color:#1D5C7C}
-.prize-code button{border:none;background:#2E7FA8;color:#fff;border-radius:999px;padding:8px 14px;font-weight:600;cursor:pointer}
+.prize-code button{border:none;background:#2E7FA8;color:#fff;border-radius:999px;padding:8px 14px;font-weight:600;cursor:pointer;white-space:nowrap;flex:none}
+@media (max-width:640px){.prize-code b{font-size:1.25rem}.prize-code button{padding:8px 12px;font-size:.9rem}}
 .prize-card .x{margin-top:6px;border:none;background:none;color:var(--ink-2);text-decoration:underline;cursor:pointer}
+.prize-how{font-size:.88rem;margin:-8px 0 16px}
 @media (max-width:640px){.booki-hidden{right:18px}}
 </style>
 </head>
@@ -549,7 +551,7 @@ body.clean .sw::after{left:3px}
       </dl></div>
       <div>
         <aside class="tip warn" style="margin-top:0"><span class="k">!</span><div><b>Edad y formato</b>Los detalles dicen 1 a 8 años y las etiquetas 0–3, 3–6 y 6–9. Y "Formato: Tapa dura premium o Ebook", sin la blanda.</div></aside>
-        <aside class="tip"><span class="k">i</span><div><b>El juego de "encontrá a Booki"</b>Como en Navidad: Booki se esconde en la página y quien lo encuentra se lleva el código BOOKI. Si querés medirlo aparte, creá un cupón propio para este juego.</div></aside>
+        <aside class="tip"><span class="k">i</span><div><b>Creá el cupón ENCONTRE en WooCommerce</b>Es el premio del juego: 5% de descuento, limitado a "Busca y encuentra". Como es un código propio, vas a ver cuántas ventas salieron de encontrar a Booki.</div></aside>
       </div>
     </div>
   </div>
@@ -631,8 +633,9 @@ body.clean .sw::after{left:3px}
   <div class="prize-card">
     <img class="prize-booki" src="https://bookinest.com/wp-content/uploads/2026/09/cropped-Untitled-1-1-150x150.png" alt="">
     <h3 id="prizeT">¡Me encontraste!</h3>
-    <p>Sos un gran explorador 🔍. Tu premio: <b>20% OFF</b> llevando 2 o más cuentos con el código:</p>
-    <div class="prize-code"><b>BOOKI</b><button type="button" id="prizeCopy">Copiar código</button></div>
+    <p>Sos un gran explorador 🔍. Tu premio: <b>5% OFF en este cuento</b> con el código:</p>
+    <div class="prize-code"><b>ENCONTRE</b><button type="button" id="prizeCopy">Copiar código</button></div>
+    <p class="prize-how">Pegalo en el carrito antes de pagar.</p>
     <a class="btn btn-primary btn-block" href="#buy" id="prizeGo">Elegí la tapa</a>
     <button class="x" type="button" id="prizeX">Seguir mirando</button>
   </div>
@@ -745,7 +748,7 @@ body.clean .sw::after{left:3px}
   prize.addEventListener('click', function(e){ if (e.target === prize) openPrize(false); });
   addEventListener('keydown', function(e){ if (e.key === 'Escape') openPrize(false); });
   document.getElementById('prizeCopy').addEventListener('click', function(){
-    var b = this; try { navigator.clipboard.writeText('BOOKI').then(function(){ b.textContent = '¡Copiado!'; }, function(){ b.textContent = 'BOOKI'; }); } catch(e){ b.textContent = 'BOOKI'; }
+    var b = this; try { navigator.clipboard.writeText('ENCONTRE').then(function(){ b.textContent = '¡Copiado!'; }, function(){ b.textContent = 'ENCONTRE'; }); } catch(e){ b.textContent = 'ENCONTRE'; }
   });
   document.getElementById('prizeGo').addEventListener('click', function(e){ openPrize(false); toBuy(e); });
 
