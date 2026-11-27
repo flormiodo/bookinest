@@ -137,7 +137,7 @@ body.clean .tip,body.clean .inspo-only{display:none!important}
 
 /* What gets personalized */
 .perso{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
-.perso img{width:220px}
+.perso img{width:220px;height:auto;aspect-ratio:1/1;object-fit:contain}
 .plist{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
 .pi{background:#fff;border-radius:22px;padding:22px;border:1.5px solid var(--line)}
 .pi .ic{width:46px;height:46px;padding:11px;border-radius:14px;background:var(--blue);color:#fff;margin-bottom:12px}
@@ -426,7 +426,6 @@ body.night .revline a{color:#9CC0F5}
       <p class="hook">¿Qué pasaría si <b>la hora de dormir se convirtiera en la aventura más tierna del día?</b></p>
       <p class="shh" aria-live="polite">Shh… Booki ya se durmió. ¿Y tu peque? 😴</p>
       <div class="from-row">
-        <a class="revline" href="#resenas"><span class="st" aria-hidden="true">★★★★★</span><span>Lo que dicen las familias</span></a>
         <button class="lamp" type="button" id="lamp" aria-pressed="false"><span class="lamp-ic" aria-hidden="true">🌙</span><span id="lampTxt">Apagá la luz</span></button>
         <a class="from" href="#buy">Desde <b>$45.000</b> por transferencia</a>
       </div>
@@ -563,7 +562,7 @@ body.night .revline a{color:#9CC0F5}
       </dl>
       <div>
         <aside class="tip warn" style="margin-top:0"><span class="k">!</span><div><b>Mismo tema que en cumpleaños</b>Los detalles dicen "Recomendado de 0 a 6 años" pero las etiquetas dicen 0–3, 3–6 y 6–9; y "Formato: Tapa dura premium o Ebook", sin la blanda. Usé "0 a 6".</div></aside>
-        <aside class="tip"><span class="k">i</span><div><b>El gag de "Apagá la luz"</b>El botón pasa la página a modo noche, con estrellas y alguna estrella fugaz. Y si alguien entra entre las 20 y las 7 hs, la página ya arranca con la luz apagada: justo la hora en que se lee este cuento.</div></aside>
+        <aside class="tip"><span class="k">i</span><div><b>El gag de "Apagá la luz"</b>El botón pasa la página a modo noche, con estrellas y alguna estrella fugaz. La página arranca con la luz apagada y quien quiera la prende.</div></aside>
       </div>
     </div>
   </div>
@@ -761,8 +760,8 @@ body.night .revline a{color:#9CC0F5}
   lamp.addEventListener('click', function(){ setNight(!document.body.classList.contains('night')); });
   addEventListener('resize', function(){ if (sraf){ ssize(); sseed(); } });
   document.addEventListener('visibilitychange', function(){ if (document.hidden) starsOff(); else if (document.body.classList.contains('night')) starsOn(); });
-  // De noche (20 a 7 hs) la página arranca con la luz apagada
-  var hr = new Date().getHours(); if (hr >= 20 || hr < 7) setNight(true);
+  // La página arranca con la luz apagada
+  setNight(true);
 
   // Notas
   var nb = document.getElementById('notes');
